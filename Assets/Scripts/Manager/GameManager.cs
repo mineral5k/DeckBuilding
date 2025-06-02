@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public event Action OnAllCardUIUpdate;
+
     public static GameManager Instance;
     private Player player;
 
@@ -28,5 +31,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        OnAllCardUIUpdate = null;
+    }
+
+    public void UpdateUI()
+    {
+        OnAllCardUIUpdate?.Invoke();
     }
 }
