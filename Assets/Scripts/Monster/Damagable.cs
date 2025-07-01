@@ -9,17 +9,17 @@ public class Damagable : MonoBehaviour
     public event Action OnHPChanged;
     private HPBarUI hpBarUI;
 
-    protected int maxHP;
+    protected int maxHP=2;
     public int MaxHP
     {
         get { return maxHP; }
     }
-    protected int currentHP;
+    protected int currentHP=1;
     public int CurrentHP
     {
         get { return currentHP; }
     }
-    protected float percentHP => currentHP / maxHP;
+    protected float percentHP => (float)currentHP / (float)maxHP;
     public float PercentHP
     {
         get { return percentHP; }

@@ -10,5 +10,6 @@ public class Player : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         GameManager.Instance.Player = this;
+        gameObject.AddComponent<PlayerStatus>();
     }
 }
