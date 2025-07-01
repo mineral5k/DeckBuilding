@@ -15,6 +15,7 @@ public class HPBarUI : MonoBehaviour
     public void Init(Damagable damagable)
     {
         status = damagable;
+        status.OnHPChanged += UpdateUI;
         UpdateUI();
     }
     public void UpdateUI()

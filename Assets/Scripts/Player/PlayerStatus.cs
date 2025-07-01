@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerStatus : Damagable
 {
-    private int maxEnergy;
+    private int maxEnergy = 3;
     private int energy;
 
-    private void Awake()
-    {
-        maxEnergy = 3;
-    }
+   
 
 
 }

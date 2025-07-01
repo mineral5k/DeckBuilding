@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
+    public event Action OnHPChanged;
+    private HPBarUI hpBarUI;
+
     protected int maxHP;
     public int MaxHP
     {
@@ -29,6 +33,14 @@ public class Damagable : MonoBehaviour
     protected bool weakness;         // 약화, 가하는 데미지 25% 감소
 
 
+
+    public void Awake()
+    {
+        GameObject barUI = Resources.Load<GameObject>("Prefabs/UI/HPBarUI");
+        GameObject bar = Instantiate(barUI,gameObject.transform);
+        hpBarUI = bar.GetComponent<HPBarUI>();
+        hpBarUI.Init(this);
+    }
 
     public void AddPower(Power power)
     {
