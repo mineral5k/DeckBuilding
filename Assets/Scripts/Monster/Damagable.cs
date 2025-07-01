@@ -6,8 +6,20 @@ using UnityEngine;
 public class Damagable : MonoBehaviour
 {
     protected int maxHP;
+    public int MaxHP
+    {
+        get { return maxHP; }
+    }
     protected int currentHP;
+    public int CurrentHP
+    {
+        get { return currentHP; }
+    }
     protected float percentHP => currentHP / maxHP;
+    public float PercentHP
+    {
+        get { return percentHP; }
+    }
     protected bool isDead => currentHP <= 0;
     protected List<Power> powers = new List<Power>();
 
