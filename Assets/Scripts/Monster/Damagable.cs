@@ -55,6 +55,11 @@ public class Damagable : MonoBehaviour
         }
     }
 
+    public void Attack(Damagable enemy,int damage)
+    {
+        enemy.TakeDamage(damage);
+    }
+
     public void Die()
     {
 

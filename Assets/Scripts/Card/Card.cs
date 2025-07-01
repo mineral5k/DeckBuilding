@@ -69,7 +69,7 @@ public class Card : MonoBehaviour
                 break;
         }
 
-        descriptionText.text = cardData.description;
+        descriptionText.text = cardData.description;                                                // 적과 아군 상태에 따라 숫자를 실시간으로 반영
         descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
         descriptionText.text = descriptionText.text.Replace("Deffense",finalDeffense.ToString());
 
