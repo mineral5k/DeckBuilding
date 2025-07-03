@@ -7,7 +7,9 @@ public class PlayerStatus : Damagable
     private int maxEnergy = 3;
     private int energy;
 
-   
-
+    private void Start()
+    {
+        CardEffectHandler.HandlerInstance.playerStatus = this;
+    }
 
 }

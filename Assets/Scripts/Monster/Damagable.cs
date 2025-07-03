@@ -9,12 +9,12 @@ public class Damagable : MonoBehaviour
     public event Action OnHPChanged;
     private HPBarUI hpBarUI;
 
-    protected int maxHP=2;
+    protected int maxHP ;
     public int MaxHP
     {
         get { return maxHP; }
     }
-    protected int currentHP=1;
+    protected int currentHP ;
     public int CurrentHP
     {
         get { return currentHP; }
@@ -73,10 +73,18 @@ public class Damagable : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
-        if (currentHP < 0)
+        OnHPChanged?.Invoke();
+        if (currentHP <= 0)
         {
             Die();
         }
+    }
+
+    public void Healed(int damage)
+    {
+        currentHP += damage;
+        if (currentHP >= maxHP) currentHP = maxHP;
+        OnHPChanged?.Invoke();
     }
 
     public void Attack(Damagable enemy,int damage)
