@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     private Player player;
+    public int battleId;
 
     public Player Player
     {
@@ -37,5 +38,10 @@ public class GameManager : MonoBehaviour
     public void UpdateUI()
     {
         OnAllCardUIUpdate?.Invoke();
+    }
+
+    public void EnterBattleStage()
+    {
+
     }
 }
