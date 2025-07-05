@@ -8,6 +8,8 @@ public class Damagable : MonoBehaviour
 {
     public event Action OnHPChanged;
     private HPBarUI hpBarUI;
+    protected BattleManager battleManager;
+
 
     protected int maxHP ;
     public int MaxHP
@@ -34,13 +36,19 @@ public class Damagable : MonoBehaviour
 
 
 
-    public void Awake()
+    protected void Awake()
     {
         GameObject barUI = Resources.Load<GameObject>("Prefabs/UI/HPBarUI");
         GameObject bar = Instantiate(barUI,gameObject.transform);
         hpBarUI = bar.GetComponent<HPBarUI>();
         hpBarUI.Init(this);
     }
+
+    public void Initialize(BattleManager bm)
+    {
+        battleManager = bm;
+    }
+
 
     public void AddPower(Power power)
     {
