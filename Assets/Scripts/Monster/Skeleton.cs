@@ -12,5 +12,16 @@ public class Skeleton : Monster
         base.Awake();
     }
 
+    public void NextPattern()
+    {
+        switch (battleManager.TurnCount % 2)
+        {
+            case 1:
+                Attack(GameManager.Instance.Player.Status, 8);
+                break;
+        }
+    }
+
+    
     
 }

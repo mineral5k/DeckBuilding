@@ -6,6 +6,12 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField] private GameObject skeletonPrefab;
     private PlayerStatus playerStatus;
+    private int turnCount;
+    public int TurnCount
+    {
+        get { return turnCount; }
+    }
+
 
     private void Awake()
     {
