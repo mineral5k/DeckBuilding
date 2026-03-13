@@ -17,6 +17,7 @@ MonoBehaviour:
   cost: 1
   type: 0
   image: {fileID: 21300000, guid: 771c777fd24645549815dce0f96890e9, type: 3}
+  isTargetting: 1
   damage: 8
   deffense: 0
   description: "\uC801\uC5D0\uAC8C Damage\uC758 \uD53C\uD574\uB97C \uC900\uB2E4."

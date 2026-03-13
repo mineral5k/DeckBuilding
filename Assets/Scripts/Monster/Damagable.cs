@@ -33,7 +33,7 @@ public class Damagable : MonoBehaviour
     protected int deffenseUp;        // 얻는 방어도 증가,감소
     protected bool vulnuerable;      // 취약, 받는 데미지 50% 증가
     protected bool weakness;         // 약화, 가하는 데미지 25% 감소
-
+    protected bool fragile;          // 손상, 얻는 방어도 25% 감소
 
 
     protected void Awake()
@@ -49,6 +49,23 @@ public class Damagable : MonoBehaviour
         battleManager = bm;
     }
 
+    public int CalcDamage(Damagable Target,int number)
+    {
+        int damage = 0;
+        damage = number + attackUp;
+        damage = (int)(damage * (weakness ? 0.75 : 1) * (Target.vulnuerable ? 1.5 : 1));
+
+        return damage;
+    }
+
+    public int CalcDeffense(Damagable Target,int number)
+    {
+        int deffense = 0;
+        deffense = number + deffenseUp;
+        deffense = (int)(deffense * (fragile ? 0.75 : 1));
+
+        return deffense;
+    }
 
     public void AddPower(Power power)
     {

@@ -52,17 +52,14 @@ public class Card : MonoBehaviour
 
         switch ( cardData.type )
         {
-            case CardType.Base:
-                typeText.text = "기본";
+            case CardType.Attack:
+                typeText.text = "공격";
                 break;
-            case CardType.Rare:
-                typeText.text = "희귀";
+            case CardType.Skill:
+                typeText.text = "스킬";
                 break;
-            case CardType.Epic:
-                typeText.text = "에픽";
-                break;
-            case CardType.Legend:
-                typeText.text = "전설";
+            case CardType.Power:
+                typeText.text = "파워";
                 break;
             case CardType.Debuff:
                 typeText.text = "상태이상";
