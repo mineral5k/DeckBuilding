@@ -21,3 +21,5 @@ MonoBehaviour:
   damage: 8
   deffense: 0
   description: "\uC801\uC5D0\uAC8C Damage\uC758 \uD53C\uD574\uB97C \uC900\uB2E4."
+  effects:
+  - {fileID: 11400000, guid: 421b7073183469b44bba9ec9e525699f, type: 2}
