@@ -36,6 +36,6 @@ public class DamageEffect : AttackEffect
 {
     public override void Excute(Damagable target, int value)
     {
-        
+        target.TakeDamage(value);
     }
 }
