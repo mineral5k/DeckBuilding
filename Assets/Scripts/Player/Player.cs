@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private PlayerStatus status = new PlayerStatus();
+    private PlayerStatus status;
     public PlayerStatus Status
     {
         get { return status; }
@@ -15,5 +15,6 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(this);
         GameManager.Instance.Player = this;
         gameObject.AddComponent<PlayerStatus>();
+        status = gameObject.GetComponent<PlayerStatus>();
     }
 }

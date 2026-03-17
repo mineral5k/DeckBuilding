@@ -122,4 +122,15 @@ public class Damagable : MonoBehaviour
 
 
     }
+
+    void OnMouseEnter()
+    {
+        GameManager.Instance.Player.Status.target = this;
+        Debug.Log("Å¸°ÙÆÃ");
+    }
+
+    void OnMouseExit()
+    {
+        GameManager.Instance.Player.Status.target = null ;
+    }
 }

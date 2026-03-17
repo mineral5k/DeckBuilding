@@ -17,6 +17,8 @@ public class Card : MonoBehaviour
     public TextMeshPro nameText;
     public TextMeshPro typeText;
     public SpriteRenderer cardImage;
+    public BezierArrow drawLine;
+    private bool isSelected = false;
 
 
     private int finalDamage => cardData.damage;
@@ -70,5 +72,31 @@ public class Card : MonoBehaviour
         descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
         descriptionText.text = descriptionText.text.Replace("Deffense",finalDeffense.ToString());
 
+    }
+
+    void OnMouseOver()
+    {
+        // 마우스를 올리면 오브젝트를 크게 만듦
+        transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+    }
+
+    private void OnMouseDown()
+    {
+        drawLine.isDraw = true;
+    }
+
+    private void OnMouseUp()
+    {
+        drawLine.isDraw = false;
+        if (GameManager.Instance.Player.Status.target!=null)
+        {
+            Debug.Log("카드 사용");
+        }
+    }
+
+    void OnMouseExit()
+    {
+        // 마우스가 나가면 원래 크기로 복구
+        transform.localScale = Vector3.one;
     }
 }

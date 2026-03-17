@@ -6,7 +6,7 @@ public class PlayerStatus : Damagable
 {
     private int maxEnergy = 3;
     private int energy;
-
+    public Damagable target = null;
 
 
     private void Awake()
