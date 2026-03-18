@@ -42,17 +42,12 @@ public class Card : MonoBehaviour
     public void SetCard( int  cardId )
     {
         cardData = Resources.Load<CardData>($"ScriptableObjects/CardData/{cardId}");
-        UpdateUI();
-    }
-
-    public void UpdateUI()
-    {
         OnThisCardUIUpdate?.Invoke();
         cardImage.sprite = cardData.image;
         costText.text = cardData.cost.ToString();
         nameText.text = cardData.cardName;
 
-        switch ( cardData.type )
+        switch (cardData.type)
         {
             case CardType.Attack:
                 typeText.text = "공격";
@@ -67,6 +62,16 @@ public class Card : MonoBehaviour
                 typeText.text = "상태이상";
                 break;
         }
+
+        descriptionText.text = cardData.description;                                                // 적과 아군 상태에 따라 숫자를 실시간으로 반영
+        descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
+        descriptionText.text = descriptionText.text.Replace("Deffense", finalDeffense.ToString());
+    }
+
+    public void UpdateUI()
+    {
+        OnThisCardUIUpdate?.Invoke();
+        costText.text = cardData.cost.ToString();
 
         descriptionText.text = cardData.description;                                                // 적과 아군 상태에 따라 숫자를 실시간으로 반영
         descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
