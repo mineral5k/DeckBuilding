@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7424e89f3f2b83a429508a48b486143b, type: 3}
   m_Name: DamageEffect
-  m_EditorClassIdentifier: Assembly-CSharp::DamageEffect
+  m_EditorClassIdentifier: 

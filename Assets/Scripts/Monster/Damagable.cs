@@ -9,6 +9,7 @@ public class Damagable : MonoBehaviour
     public event Action OnHPChanged;
     private HPBarUI hpBarUI;
     protected BattleManager battleManager;
+    public Damagable target = null;
 
 
     protected int maxHP ;
@@ -42,6 +43,7 @@ public class Damagable : MonoBehaviour
         GameObject bar = Instantiate(barUI,gameObject.transform);
         hpBarUI = bar.GetComponent<HPBarUI>();
         hpBarUI.Init(this);
+        gameObject.AddComponent<BoxHighlite>();
     }
 
     public void Initialize(BattleManager bm)
@@ -54,11 +56,18 @@ public class Damagable : MonoBehaviour
         int damage = 0;
         damage = number + attackUp;
         damage = (int)(damage * (weakness ? 0.75 : 1) * (Target.vulnuerable ? 1.5 : 1));
-
         return damage;
     }
 
-    public int CalcDeffense(Damagable Target,int number)
+    public int CalcDamage(int number)
+    {
+        int damage = 0;
+        damage = number + attackUp;
+        damage = (int)(damage * (weakness ? 0.75 : 1));
+        return damage;
+    }
+
+    public int CalcDeffense(int number)
     {
         int deffense = 0;
         deffense = number + deffenseUp;

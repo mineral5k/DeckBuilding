@@ -19,10 +19,12 @@ public class Card : MonoBehaviour
     public SpriteRenderer cardImage;
     public BezierArrow drawLine;
     private bool isSelected = false;
+    private PlayerStatus player => GameManager.Instance.Player.Status;
+    private Damagable target => player.target;
 
 
-    private int finalDamage => cardData.damage;
-    private int finalDeffense => cardData.deffense; 
+    private int finalDamage => (player.target == null) ? player.CalcDamage(cardData.damage) : player.CalcDamage(player.target, cardData.damage);
+    private int finalDeffense => player.CalcDeffense(cardData.deffense);
 
 
 
@@ -31,7 +33,7 @@ public class Card : MonoBehaviour
     {
         OnThisCardUIUpdate = null;
         //Player player = GameManager.Instance.Player;
-        SetCard(1);
+        //SetCard(1);
     }
 
     private void Start()
@@ -79,6 +81,25 @@ public class Card : MonoBehaviour
 
     }
 
+    public void UseCard()
+    {
+        foreach (var effect in cardData.effects)
+        {
+            int value = 0;
+            if (effect is AttackEffect) value = finalDamage;
+            else if (effect is DeffenseEffect) value = finalDeffense;
+            effect.Excute(player.target, value);
+        }
+    }
+
+
+
+
+
+
+
+
+
     void OnMouseOver()
     {
         // 마우스를 올리면 오브젝트를 크게 만듦
@@ -95,7 +116,7 @@ public class Card : MonoBehaviour
         drawLine.isDraw = false;
         if (GameManager.Instance.Player.Status.target!=null)
         {
-            Debug.Log("카드 사용");
+            UseCard();
         }
     }
 

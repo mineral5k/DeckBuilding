@@ -23,7 +23,7 @@ public class CardData : ScriptableObject
 
 public abstract class CardEffect : ScriptableObject
 {
-    public abstract void Excute(Damagable target, int value);
+    public abstract void Excute(Damagable? target, int value);
 }
 
 public abstract class AttackEffect : CardEffect
@@ -31,11 +31,14 @@ public abstract class AttackEffect : CardEffect
 
 }
 
-[CreateAssetMenu(fileName = "DamageEffect", menuName = "Data/Effect/AttackData")]
-public class DamageEffect : AttackEffect
+public abstract class DeffenseEffect : CardEffect
 {
-    public override void Excute(Damagable target, int value)
-    {
-        target.TakeDamage(value);
-    }
+
 }
+
+public abstract class UtilityEffect : CardEffect
+{
+
+}
+
+
