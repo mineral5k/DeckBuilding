@@ -16,7 +16,6 @@ public class PlayerStatus : Damagable
     }
     private void Start()
     {
-        CardEffectHandler.HandlerInstance.playerStatus = this;
     }
 
 }
