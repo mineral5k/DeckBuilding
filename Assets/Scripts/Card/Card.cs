@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,7 @@ using System.Linq.Expressions;
 using System.Runtime.ConstrainedExecution;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Card : MonoBehaviour
 {
@@ -103,7 +105,8 @@ public class Card : MonoBehaviour
     void OnMouseOver()
     {
         // 마우스를 올리면 오브젝트를 크게 만듦
-        transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+        transform.DOScale(1.2f, 0.1f);
+        GetComponent<SortingGroup>().sortingOrder = 100;
     }
 
     private void OnMouseDown()
@@ -118,11 +121,15 @@ public class Card : MonoBehaviour
         {
             UseCard();
         }
+        transform.DOScale(1.0f, 0.1f);
+        DeckManager.Instance.UpdateHand();
     }
 
     void OnMouseExit()
     {
+        if (Input.GetMouseButton(0)) return;         //선택해서 움직이는 중이면 유지
         // 마우스가 나가면 원래 크기로 복구
-        transform.localScale = Vector3.one;
+        transform.DOScale(1.0f, 0.1f);
+        DeckManager.Instance.UpdateHand();
     }
 }

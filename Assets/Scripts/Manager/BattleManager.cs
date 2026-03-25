@@ -13,9 +13,8 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    private void Awake()
+    public void Init(int battleid)
     {
-        int battleid = GameManager.Instance.battleId;
         playerStatus = GameManager.Instance.Player.Status;
         playerStatus.Initialize(this);
         switch (battleid)
@@ -26,5 +25,17 @@ public class BattleManager : MonoBehaviour
                 skeletonStatus.Initialize(this);
                 break;
         }
+    }
+
+    public void TurnStart()
+    {
+        //playerStatus.energy = playerStatus.maxEnergy;
+        DeckManager.Instance.preDrawCards = DeckManager.Instance.playerDeck;   // 임시 나중에 반드시 삭제
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        //playerStatus.StartTurn();
     }
 }
