@@ -22,6 +22,11 @@ public class Damagable : MonoBehaviour
     {
         get { return currentHP; }
     }
+    protected int shield;
+    public int Shield
+    {
+        get { return shield; }
+    }
     protected float percentHP => (float)currentHP / (float)maxHP;
     public float PercentHP
     {
@@ -112,6 +117,12 @@ public class Damagable : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void GainShield(int value)
+    {
+        shield += CalcDeffense(value);
+        OnHPChanged?.Invoke();
     }
 
     public void Healed(int damage)

@@ -126,8 +126,8 @@ public class DeckManager : MonoBehaviour
         AddCard(1, playerDeck);
         AddCard(1, playerDeck);
         AddCard(1, playerDeck);
-        AddCard(1, playerDeck);
-        AddCard(1, playerDeck);
+        AddCard(2, playerDeck);
+        AddCard(2, playerDeck);
 
     }
 
