@@ -28,6 +28,8 @@ public class Card : MonoBehaviour
     private int finalDamage => (player.target == null) ? player.CalcDamage(cardData.damage) : player.CalcDamage(player.target, cardData.damage);
     private int finalDeffense => player.CalcDeffense(cardData.deffense);
 
+    private Color damageColor;   // 버프로 데미지나 방어도가 높아지면 초록색, 낮아지면 빨간색으로 숫자 표시
+    private Color deffenseColor;
 
 
 
@@ -48,7 +50,6 @@ public class Card : MonoBehaviour
         cardData = Resources.Load<CardData>($"ScriptableObjects/CardData/{cardId}");
         OnThisCardUIUpdate?.Invoke();
         cardImage.sprite = cardData.image;
-        costText.text = cardData.cost.ToString();
         nameText.text = cardData.cardName;
 
         switch (cardData.type)
@@ -66,10 +67,8 @@ public class Card : MonoBehaviour
                 typeText.text = "상태이상";
                 break;
         }
-
-        descriptionText.text = cardData.description;                                                // 적과 아군 상태에 따라 숫자를 실시간으로 반영
-        descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
-        descriptionText.text = descriptionText.text.Replace("Deffense", finalDeffense.ToString());
+        UpdateUI();
+        
     }
 
     public void UpdateUI()
@@ -78,8 +77,43 @@ public class Card : MonoBehaviour
         costText.text = cardData.cost.ToString();
 
         descriptionText.text = cardData.description;                                                // 적과 아군 상태에 따라 숫자를 실시간으로 반영
-        descriptionText.text = descriptionText.text.Replace("Damage", finalDamage.ToString());
-        descriptionText.text = descriptionText.text.Replace("Deffense",finalDeffense.ToString());
+
+        if (finalDamage > cardData.damage)
+        {
+            descriptionText.text = descriptionText.text.Replace("Damage", $"<color=green>{finalDamage}</color>");
+        }
+        else if (finalDamage < cardData.damage)
+        {
+            descriptionText.text = descriptionText.text.Replace("Damage", $"<color=red>{finalDamage}</color>");
+        }
+        else
+        {
+            descriptionText.text = descriptionText.text.Replace("Damage", $"{finalDamage}");
+
+        }
+
+        if (finalDeffense > cardData.deffense)
+        {
+            descriptionText.text = descriptionText.text.Replace("Deffense", $"<color=green>{finalDeffense}</color>");
+        }
+        else if (finalDeffense < cardData.deffense)
+        {
+            descriptionText.text = descriptionText.text.Replace("Deffense", $"<color=red>{finalDeffense}</color>");
+        }
+        else
+        {
+            descriptionText.text = descriptionText.text.Replace("Deffense", $"{finalDeffense}");
+        }
+
+    }
+
+    public void DecideColor()
+    {
+        if (finalDamage > cardData.damage) damageColor = Color.green;
+        else if (finalDamage < cardData.damage) damageColor = Color.red;
+        if (finalDeffense > cardData.deffense) deffenseColor = Color.green;
+        else if (finalDeffense < cardData.deffense) deffenseColor = Color.red;
+
 
     }
 

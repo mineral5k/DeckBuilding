@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45db6fcdf03677748b25d7e73a1d3f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonPrefab: {fileID: 0}
+  skeletonPrefab: {fileID: 7181765478878574221}
 --- !u!4 &547204321
 Transform:
   m_ObjectHideFlags: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 547204320}
         m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
-        m_MethodName: TurnStart
+        m_MethodName: DevSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1271,6 +1271,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a637d4428ed054c908593024d43ac1, type: 3}
+--- !u!1 &7181765478878574221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7409539920210344673, guid: 54a637d4428ed054c908593024d43ac1, type: 3}
+  m_PrefabInstance: {fileID: 7181765478878574220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

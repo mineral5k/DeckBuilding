@@ -69,6 +69,14 @@ public class DeckManager : MonoBehaviour
         UpdateHand();
     }
 
+    public void DiscardAllHand()                           // 턴 종료 시 모든 핸드 버림
+    {
+        while (handCards[0] !=null)
+        {
+            MoveCard(handCards, usedCards, handCards[0]);
+        }
+    }
+
     public void UpdateHand()                                 // 핸드의 카드 위치 조정
     {
         int count = handCards.Count;

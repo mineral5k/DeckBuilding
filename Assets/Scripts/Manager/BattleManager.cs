@@ -27,7 +27,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void TurnStart()
+    public void DevSetting()
     {
         //playerStatus.energy = playerStatus.maxEnergy;
         DeckManager.Instance.preDrawCards = DeckManager.Instance.playerDeck;   // 임시 나중에 반드시 삭제
@@ -37,5 +37,23 @@ public class BattleManager : MonoBehaviour
         DeckManager.Instance.DrawCard();
         DeckManager.Instance.DrawCard();
         //playerStatus.StartTurn();
+    }
+
+    public void TurnStart()
+    {
+        BattleEvents.OnTurnStart.Invoke();
+        playerStatus.energy = playerStatus.maxEnergy;
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard();
+    }
+
+    public void TurnEnd()
+    {
+        BattleEvents.OnTurnEnd.Invoke();
+        DeckManager.Instance.DiscardAllHand();
+
     }
 }
