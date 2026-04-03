@@ -6,13 +6,15 @@ using UnityEngine;
 public static class BattleEvents                             
 {
     public static Action OnTurnStart;    
-    public static Action OnTurnEnd;        
+    public static Action OnPlayerTurnEnd;        
+    public static Action OnEnemyTurnEnd;
     public static Action OnCardDrawed;
     public static Action OnCardPlayed;
     public static void Reset()
     {
         OnTurnStart = null;
-        OnTurnEnd = null;
+        OnPlayerTurnEnd = null;
+        OnEnemyTurnEnd = null;
         OnCardDrawed = null;
         OnCardPlayed = null;
     }

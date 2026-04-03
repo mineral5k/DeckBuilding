@@ -50,9 +50,9 @@ public class BattleManager : MonoBehaviour
         DeckManager.Instance.DrawCard();
     }
 
-    public void TurnEnd()
+    public void EnemyTurnEnd()
     {
-        BattleEvents.OnTurnEnd.Invoke();
+        BattleEvents.OnEnemyTurnEnd.Invoke();
         DeckManager.Instance.DiscardAllHand();
 
     }

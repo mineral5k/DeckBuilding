@@ -22,24 +22,21 @@ public class Damagable : MonoBehaviour
     {
         get { return currentHP; }
     }
-    protected int shield;
-    public int Shield
-    {
-        get { return shield; }
-    }
+    public int shield;
+    
     protected float percentHP => (float)currentHP / (float)maxHP;
     public float PercentHP
     {
         get { return percentHP; }
     }
     protected bool isDead => currentHP <= 0;
-    protected List<Power> powers = new List<Power>();
+    public List<Power> powers = new List<Power>();
 
-    protected int attackUp;          // 공격 피해 증가,감소
-    protected int deffenseUp;        // 얻는 방어도 증가,감소
-    protected bool vulnuerable;      // 취약, 받는 데미지 50% 증가
-    protected bool weakness;         // 약화, 가하는 데미지 25% 감소
-    protected bool fragile;          // 손상, 얻는 방어도 25% 감소
+    public int attackUp;          // 공격 피해 증가,감소
+    public int deffenseUp;        // 얻는 방어도 증가,감소
+    public bool vulnuerable;      // 취약, 받는 데미지 50% 증가
+    public bool weakness;         // 약화, 가하는 데미지 25% 감소
+    public bool fragile;          // 손상, 얻는 방어도 25% 감소
 
 
     protected void Awake()
@@ -81,32 +78,32 @@ public class Damagable : MonoBehaviour
         return deffense;
     }
 
-    public void AddPower(Power power)
+    public void AddPower(Power power,int value)
     {
-        powers.Add(power);
-        power.OnApply(this);
-    }
-
-    public void RemovePower(Power power)
-    {
-        power.OnRemove(this);
-        powers.Remove(power);
-    }
-
-    public void StartTurn()
-    {
-        foreach (var power in powers)
+        Power powerOfThis = power;           // power의 이 개체 전용 인스턴스 (각 개체마다 파워가 각각 다른 인스턴스를 가져야 하므로)
+        bool isExist = false;
+        foreach (Power existedPower in powers)        // 추가하려는 파워가 있는지 검사
         {
-            power.OnTurnStart(this);
+            if (existedPower.PowerName == power.PowerName)  //추가하려는 파워가 이미 있는지 검사 (동일한 이름의 파워 존재)
+            {
+                isExist = true;
+                powerOfThis = existedPower;
+                break;
+            }
         }
-    }
 
-    public void EndTurn()
-    {
-        foreach (var power in powers)
+        if (!isExist)                              // 추가하려는 파워가 아직 없을 시
         {
-            power.OnTurnEnd(this);
+            powers.Add(powerOfThis);
+            powerOfThis.amount += value;
+            powerOfThis.OnApply(this);
         }
+        else                                     // 추가하려는 파워가 이미 존재할 시
+        {
+            powerOfThis.amount += value;
+            powerOfThis.OnAdded(this);
+        }
+
     }
 
     public void TakeDamage(int damage)

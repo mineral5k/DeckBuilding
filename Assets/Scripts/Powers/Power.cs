@@ -4,13 +4,16 @@ using UnityEngine;
 
 public abstract class Power : MonoBehaviour
 {
-    public string powerName;
-    public string description;
-    public int amount;
-    public bool isBuff; // true = 버프, false = 디버프
+    public abstract string PowerName { get; }
+    public abstract string Description { get; }
+    protected Damagable powerOwner;
+    public int amount = 0;
+    //public bool isBuff; // true = 버프, false = 디버프
+
+    public abstract Power clone();
 
     public abstract void OnApply(Damagable damagable);
-    public abstract void OnTurnStart(Damagable damagable);
-    public abstract void OnTurnEnd(Damagable damagable);
-    public abstract void OnRemove(Damagable damagable);
+    public abstract void OnAdded(Damagable damagable);
+    
+    
 }

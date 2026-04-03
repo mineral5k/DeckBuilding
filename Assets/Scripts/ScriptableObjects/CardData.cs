@@ -15,6 +15,7 @@ public class CardData : ScriptableObject
     public bool isTargetting;
     public int damage;
     public int deffense;
+    public int utilityAmount;
     public string description;
     public List<CardEffect> effects; 
 

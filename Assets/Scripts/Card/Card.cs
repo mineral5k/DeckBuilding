@@ -124,6 +124,7 @@ public class Card : MonoBehaviour
             int value = 0;
             if (effect is AttackEffect) value = finalDamage;
             else if (effect is DeffenseEffect) value = finalDeffense;
+            else if (effect is UtilityEffect) value = cardData.utilityAmount;
             effect.Excute(player.target, value);
         }
     }

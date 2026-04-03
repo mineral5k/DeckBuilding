@@ -29,7 +29,7 @@ public class HPBarUI : MonoBehaviour
         image.fillAmount = ratio;
         healthText.text = $"{status.CurrentHP} / {status.MaxHP}";
 
-        if (status.Shield<=0)                      //방어도 존재 시 아이콘 띄우고 색상 변경.
+        if (status.shield<=0)                      //방어도 존재 시 아이콘 띄우고 색상 변경.
         {
             shieldImage.SetActive(false);
             image.color = Color.red;
@@ -39,7 +39,7 @@ public class HPBarUI : MonoBehaviour
         {
             shieldImage.SetActive(true);
             image.color = shieldColor;
-            shieldText.text = $"{status.Shield}";
+            shieldText.text = $"{status.shield}";
         }
     }
 }
