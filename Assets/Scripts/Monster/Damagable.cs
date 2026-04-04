@@ -8,7 +8,7 @@ public class Damagable : MonoBehaviour
 {
     public event Action OnHPChanged;
     private HPBarUI hpBarUI;
-    protected BattleManager battleManager;
+    public BattleManager battleManager;
     public Damagable target = null;
 
 
@@ -131,7 +131,8 @@ public class Damagable : MonoBehaviour
 
     public void Attack(Damagable enemy,int damage)
     {
-        enemy.TakeDamage(damage);
+        int finalDamage = CalcDamage(enemy, damage);
+        enemy.TakeDamage(finalDamage);
     }
 
     public void Die()

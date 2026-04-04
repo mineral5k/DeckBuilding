@@ -71,9 +71,10 @@ public class DeckManager : MonoBehaviour
 
     public void DiscardAllHand()                           // 턴 종료 시 모든 핸드 버림
     {
-        while (handCards[0] !=null)
+
+        for(int index = handCards.Count-1; index>=0; index--)            
         {
-            MoveCard(handCards, usedCards, handCards[0]);
+            MoveCard(handCards, usedCards, handCards[index]);
         }
     }
 

@@ -6,15 +6,18 @@ public class BattleManager : MonoBehaviour
 {
     [SerializeField] private GameObject skeletonPrefab;
     private PlayerStatus playerStatus;
-    private int turnCount;
+    private int turnCount = 1;
     public int TurnCount
     {
         get { return turnCount; }
     }
 
+    public List<Monster> enemies;
+
 
     public void Init(int battleid)
     {
+        turnCount = 1;
         playerStatus = GameManager.Instance.Player.Status;
         playerStatus.Initialize(this);
         switch (battleid)
@@ -41,8 +44,9 @@ public class BattleManager : MonoBehaviour
 
     public void TurnStart()
     {
-        BattleEvents.OnTurnStart.Invoke();
-        playerStatus.energy = playerStatus.maxEnergy;
+        turnCount++;
+        BattleEvents.OnTurnStart?.Invoke();
+        //playerStatus.energy = playerStatus.maxEnergy;
         DeckManager.Instance.DrawCard();
         DeckManager.Instance.DrawCard();
         DeckManager.Instance.DrawCard();
@@ -50,10 +54,33 @@ public class BattleManager : MonoBehaviour
         DeckManager.Instance.DrawCard();
     }
 
-    public void EnemyTurnEnd()
+    public void PlayerTurnEnd()
     {
-        BattleEvents.OnEnemyTurnEnd.Invoke();
+        BattleEvents.OnPlayerTurnEnd?.Invoke();
         DeckManager.Instance.DiscardAllHand();
 
+    }
+
+    public void EnemyTurnStart()
+    {
+        BattleEvents.OnEnemyTurnStart?.Invoke();
+        foreach (var enemy in enemies )
+        {
+            enemy.NextPattern();
+        }
+    }
+
+    public void EnemyTurnEnd()
+    {
+        BattleEvents.OnEnemyTurnEnd?.Invoke();
+
+    }
+
+    public void ProceedTurn()         // 턴 종료 버튼을 눌렀을 시 실행 
+    {
+        PlayerTurnEnd();
+        EnemyTurnStart();
+        EnemyTurnEnd(); 
+        TurnStart();
     }
 }

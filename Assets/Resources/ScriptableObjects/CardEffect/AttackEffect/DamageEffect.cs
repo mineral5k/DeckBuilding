@@ -7,6 +7,6 @@ public class DamageEffect : AttackEffect
 {
     public override void Excute(Damagable target, int value)
     {
-        target.TakeDamage(value);
+        GameManager.Instance.Player.Status.Attack(target, value);
     }
 }

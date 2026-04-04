@@ -5,6 +5,7 @@ using UnityEngine;
 public class Skeleton : Monster
 {
 
+
     private void Awake()
     {
         maxHP = 20;
@@ -12,16 +13,54 @@ public class Skeleton : Monster
         base.Awake();
     }
 
-    public void NextPattern()
+    public override void NextPattern()
     {
-        switch (battleManager.TurnCount % 2)
+        switch ( (battleManager.TurnCount % 3)-1 )   // 1턴에 0번 패턴 시작하기 위해 
         {
+            case 0:
+                Pattern0();
+                break;
             case 1:
-                Attack(GameManager.Instance.Player.Status, 8);
+                Pattern1();
+                break;
+            case 2:
+                Pattern2();
                 break;
         }
     }
+    /*
+     스켈레톤의 패턴
 
-    
-    
+     0: 12 x 1 공격
+     1:  6 x 1 공격 , 5방어도 얻음
+     2:  힘 2 얻음. 플레이어에게 취약 1 부여
+
+     */
+
+    public void Pattern0()
+    {
+        Attack(target, 12);
+        Debug.Log("0");
+    }
+
+    public void Pattern1()
+    {
+        Attack(target, 6);
+        GainShield(5);
+        Debug.Log("1");
+
+    }
+
+    public void Pattern2()
+    {
+        Strength strength = new Strength();
+        Vulnerable vulnerable = new Vulnerable();
+        AddPower(strength, 2);
+        target.AddPower(vulnerable, 1);
+        Debug.Log("2");
+
+    }
+
+
+
 }

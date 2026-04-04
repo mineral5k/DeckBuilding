@@ -122,8 +122,8 @@ public class Card : MonoBehaviour
         foreach (var effect in cardData.effects)
         {
             int value = 0;
-            if (effect is AttackEffect) value = finalDamage;
-            else if (effect is DeffenseEffect) value = finalDeffense;
+            if (effect is AttackEffect) value = cardData.damage;
+            else if (effect is DeffenseEffect) value = cardData.deffense;
             else if (effect is UtilityEffect) value = cardData.utilityAmount;
             effect.Excute(player.target, value);
         }
