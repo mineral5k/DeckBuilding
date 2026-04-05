@@ -51,6 +51,11 @@ public class Damagable : MonoBehaviour
     public void Initialize(BattleManager bm)
     {
         battleManager = bm;
+        if( this is Monster)       // 몬스터일 경우 플레이어를 타겟으로 삼음.
+        {
+            Debug.Log(" 몬스터 생성");
+            target = bm.Player;
+        }
     }
 
     public int CalcDamage(Damagable Target,int number)
@@ -119,6 +124,12 @@ public class Damagable : MonoBehaviour
     public void GainShield(int value)
     {
         shield += CalcDeffense(value);
+        OnHPChanged?.Invoke();
+    }
+
+    public void ResetShield()
+    {
+        shield = 0;
         OnHPChanged?.Invoke();
     }
 

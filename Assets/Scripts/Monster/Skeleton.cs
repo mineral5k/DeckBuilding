@@ -8,8 +8,8 @@ public class Skeleton : Monster
 
     private void Awake()
     {
-        maxHP = 20;
-        currentHP = 20;
+        maxHP = 48;
+        currentHP = 48;
         base.Awake();
     }
 

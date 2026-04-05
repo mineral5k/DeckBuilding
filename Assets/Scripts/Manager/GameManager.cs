@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     private Player player;
-    public int battleId;
+    public int battleId = 1;
 
     public Player Player
     {
