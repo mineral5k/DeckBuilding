@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Vulnerable : Power
 {
+    public override string IconName => "Vulnerable";
     public override string PowerName => "취약";
 
     public override string Description => "피해를 50% 더 받습니다.";

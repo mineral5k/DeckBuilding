@@ -14,6 +14,8 @@ public class HPBarUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI shieldText;
     private Color shieldColor = new Color32(55, 171, 225,255);
 
+    [SerializeField] private List<PowerIcon> powerIcons;
+
 
     public void Init(Damagable damagable)
     {
