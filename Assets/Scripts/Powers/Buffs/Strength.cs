@@ -24,6 +24,7 @@ public class Strength : Power
         {
             powerOwner.powers.Remove(this);
         }
+        powerOwner.HPBarUIUpdate();
     }
 
     public override void OnAdded(Damagable damagable)

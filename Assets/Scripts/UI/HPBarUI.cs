@@ -43,5 +43,22 @@ public class HPBarUI : MonoBehaviour
             image.color = shieldColor;
             shieldText.text = $"{status.shield}";
         }
+
+        UpdatePowerIcons();
+        
+    }
+
+    public void UpdatePowerIcons()
+    {
+        foreach (PowerIcon icon in powerIcons)
+        {
+            icon.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < status.powers.Count; i++)
+        {
+            powerIcons[i].gameObject.SetActive(true);
+            powerIcons[i].AllocatePower(status.powers[i]);       // TODO : 추후 파워가 7개 이상일때 아이콘 추가하는 코드 필요 
+        }
     }
 }

@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
     public PlayerStatus Player => GameManager.Instance.Player.Status;
     
 
-    private int turnCount = 1;
+    private int turnCount = 0;
     public int TurnCount
     {
         get { return turnCount; }
@@ -58,7 +58,7 @@ public class BattleManager : MonoBehaviour
 
     public void Init()
     {
-        turnCount = 1;
+        turnCount = 0;
         //playerStatus = GameManager.Instance.Player.Status;
         Player.Initialize(this);
         TurnStart();

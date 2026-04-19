@@ -58,6 +58,11 @@ public class Damagable : MonoBehaviour
         }
     }
 
+    public void HPBarUIUpdate()
+    {
+        OnHPChanged?.Invoke();
+    }
+
     public int CalcDamage(Damagable Target,int number)
     {
         int damage = 0;
@@ -108,6 +113,7 @@ public class Damagable : MonoBehaviour
             powerOfThis.amount += value;
             powerOfThis.OnAdded(this);
         }
+        OnHPChanged?.Invoke();
 
     }
 

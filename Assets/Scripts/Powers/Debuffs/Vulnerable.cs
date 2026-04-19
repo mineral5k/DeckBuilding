@@ -11,13 +11,16 @@ public class Vulnerable : Power
 
     public override Power clone()
     {
-        return new Vulnerable();
+        Debug.Log("ХЌЗа");
+        Power power = new Vulnerable();
+        return power;
     }
 
     
 
     public override void OnApply(Damagable damagable)
     {
+        powerOwner = damagable;
         if (amount >0)
         {
             damagable.vulnuerable = true;
@@ -31,12 +34,13 @@ public class Vulnerable : Power
 
     public override void OnAdded(Damagable damagable)
     {
-        throw new System.NotImplementedException();
+        powerOwner.HPBarUIUpdate();
     }
 
     public void OnTurnEnd()
     {
         amount--;
+        powerOwner.HPBarUIUpdate();
         if (amount <= 0)
         {
             ReMoveThis() ;
@@ -48,5 +52,6 @@ public class Vulnerable : Power
         powerOwner.vulnuerable = false;
         powerOwner.powers.Remove(this);
         BattleEvents.OnEnemyTurnEnd -= OnTurnEnd;
+        powerOwner.HPBarUIUpdate();
     }
 }

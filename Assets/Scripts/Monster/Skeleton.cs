@@ -15,7 +15,7 @@ public class Skeleton : Monster
 
     public override void NextPattern()
     {
-        switch ( (battleManager.TurnCount % 3)-1 )   // 1턴에 0번 패턴 시작하기 위해 
+        switch ( (battleManager.TurnCount-1) % 3 )   // 1턴에 0번 패턴 시작하기 위해 
         {
             case 0:
                 Pattern0();
@@ -53,11 +53,11 @@ public class Skeleton : Monster
 
     public void Pattern2()
     {
+        Debug.Log("2");
         Strength strength = new Strength();
         Vulnerable vulnerable = new Vulnerable();
         AddPower(strength, 2);
-        target.AddPower(vulnerable, 1);
-        Debug.Log("2");
+        target.AddPower(vulnerable, 2);
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Power : MonoBehaviour
+public abstract class Power
 {
     public abstract string IconName { get; }         // 아이콘 불러오기 위함. 각 파워의 영어 이름 그대로 쓸 것
     public abstract string PowerName { get; }        // 아이콘에 마우스를 올리면 나올 이름. 한글로
