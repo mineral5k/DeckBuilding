@@ -11,9 +11,7 @@ public class Vulnerable : Power
 
     public override Power clone()
     {
-        Debug.Log("ХЌЗа");
-        Power power = new Vulnerable();
-        return power;
+        return new Vulnerable();
     }
 
     

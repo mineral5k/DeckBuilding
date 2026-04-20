@@ -40,20 +40,17 @@ public class Skeleton : Monster
     public void Pattern0()
     {
         Attack(target, 12);
-        Debug.Log("0");
     }
 
     public void Pattern1()
     {
         Attack(target, 6);
         GainShield(5);
-        Debug.Log("1");
 
     }
 
     public void Pattern2()
     {
-        Debug.Log("2");
         Strength strength = new Strength();
         Vulnerable vulnerable = new Vulnerable();
         AddPower(strength, 2);

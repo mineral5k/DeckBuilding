@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -15,6 +16,8 @@ public class HPBarUI : MonoBehaviour
     private Color shieldColor = new Color32(55, 171, 225,255);
 
     [SerializeField] private List<PowerIcon> powerIcons;
+    [SerializeField] private List<PowerDescPannel> powerDescPannels;
+
 
 
     public void Init(Damagable damagable)
@@ -57,8 +60,27 @@ public class HPBarUI : MonoBehaviour
 
         for (int i = 0; i < status.powers.Count; i++)
         {
+            if (i>=12) break;
             powerIcons[i].gameObject.SetActive(true);
-            powerIcons[i].AllocatePower(status.powers[i]);       // TODO : 추후 파워가 7개 이상일때 아이콘 추가하는 코드 필요 
+            powerIcons[i].AllocatePower(status.powers[i]);       // TODO : 추후 파워가 13개 이상일때 아이콘 추가하는 코드 필요 
+        }
+    }
+
+    public void ShowAllPowerDescPannels()
+    {
+        for (int i = 0; i < status.powers.Count; i++)
+        {
+            if (i >= 5) break;
+            powerDescPannels[i].gameObject.SetActive(true);
+            powerDescPannels[i].AllocatePower(status.powers[i]);       
+        }
+    }
+
+    public void HideAllPowerDescPannels()
+    {
+        foreach(PowerDescPannel pannel in powerDescPannels)
+        {
+            pannel.gameObject.SetActive(false);
         }
     }
 }
