@@ -19,12 +19,15 @@ public class Skeleton : Monster
         {
             case 0:
                 Pattern0();
+                IntentionOfPattern1();
                 break;
             case 1:
                 Pattern1();
+                IntentionOfPattern2();
                 break;
             case 2:
                 Pattern2();
+                IntentionOfPattern0();
                 break;
         }
     }
@@ -42,11 +45,22 @@ public class Skeleton : Monster
         Attack(target, 12);
     }
 
+    public override void IntentionOfPattern0()
+    {
+        hpBarUI.CreateIntention1().SetIntentionToAttack(12, 1, this);
+    }
+
     public void Pattern1()
     {
         Attack(target, 6);
         GainShield(5);
 
+    }
+
+    public void IntentionOfPattern1()
+    {
+        hpBarUI.CreateIntention1().SetIntentionToAttack(6,1,this);
+        hpBarUI.CreateIntention2().SetIntentionToDeffense();
     }
 
     public void Pattern2()
@@ -56,6 +70,12 @@ public class Skeleton : Monster
         AddPower(strength, 2);
         target.AddPower(vulnerable, 2);
 
+    }
+
+    public void IntentionOfPattern2()
+    {
+        hpBarUI.CreateIntention1().SetIntentionToBuff();
+        hpBarUI.CreateIntention2().SetIntentionToDebuff();
     }
 
 

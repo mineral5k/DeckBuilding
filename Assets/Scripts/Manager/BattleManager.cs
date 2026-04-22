@@ -16,7 +16,7 @@ public class BattleManager : MonoBehaviour
     }
     private int battleId => GameManager.Instance.battleId;
 
-    public List<Monster> enemies;
+    public List<Monster> enemies = new List<Monster> { };
     public List<Transform> enemyLocations1;   // 적 1체일 때 몬스터 위치
     public List<Transform> enemyLocations2;   // 적 2체일 때 몬스터 위치
     public List<Transform> enemyLocations3;   // 적 3체일 때 몬스터 위치
@@ -63,6 +63,15 @@ public class BattleManager : MonoBehaviour
         Player.Initialize(this);
         TurnStart();
         
+    }
+
+    public void UpdateAllEneiesIntention()
+    {
+        if (enemies.Count == 0) return;
+        foreach (var enemy in enemies)
+        {
+            enemy.hpBarUI.UpdateIntentionIcons();
+        }
     }
 
     public void DevSetting()

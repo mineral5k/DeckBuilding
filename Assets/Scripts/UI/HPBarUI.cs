@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,6 +18,13 @@ public class HPBarUI : MonoBehaviour
 
     [SerializeField] private List<PowerIcon> powerIcons;
     [SerializeField] private List<PowerDescPannel> powerDescPannels;
+    [SerializeField] private GameObject IntentionIconGO;
+    [SerializeField] private List<IntentionIcon> intentionIcons;
+
+    private Vector3 worldPos;
+    private Vector3 intentionOffset = new Vector3(0.3f, 0f, 0f);
+
+
 
 
 
@@ -25,6 +33,18 @@ public class HPBarUI : MonoBehaviour
         status = damagable;
         status.OnHPChanged += UpdateUI;
         UpdateUI();
+
+        foreach (var powerIcon in powerIcons)
+        {
+            powerIcon.SetHPBar(this);
+        }
+
+        foreach (var Pannel in powerDescPannels)
+        {
+            Pannel.SetLocation(status);
+        }
+
+        SetIntentionIconLocation();
     }
     public void UpdateUI()
     {
@@ -48,6 +68,7 @@ public class HPBarUI : MonoBehaviour
         }
 
         UpdatePowerIcons();
+        UpdateIntentionIcons();
         
     }
 
@@ -64,16 +85,35 @@ public class HPBarUI : MonoBehaviour
             powerIcons[i].gameObject.SetActive(true);
             powerIcons[i].AllocatePower(status.powers[i]);       // TODO : 추후 파워가 13개 이상일때 아이콘 추가하는 코드 필요 
         }
+
+        if (status.battleManager == null) return;
+        status.battleManager.UpdateAllEneiesIntention();
+    }
+
+    public void UpdateIntentionIcons()
+    {
+        if (intentionIcons.Count == 0) return;
+        foreach( var icon in intentionIcons)
+        {
+            icon.UIUpdate();
+        }
     }
 
     public void ShowAllPowerDescPannels()
     {
+        
         for (int i = 0; i < status.powers.Count; i++)
         {
             if (i >= 5) break;
             powerDescPannels[i].gameObject.SetActive(true);
-            powerDescPannels[i].AllocatePower(status.powers[i]);       
+            powerDescPannels[i].AllocatePower(status.powers[i]);
         }
+    }
+
+    public void ShowOnePowerDescPannel(Power power)
+    {
+        powerDescPannels[1].gameObject.SetActive(true);
+        powerDescPannels[1].AllocatePower(power);
     }
 
     public void HideAllPowerDescPannels()
@@ -82,5 +122,30 @@ public class HPBarUI : MonoBehaviour
         {
             pannel.gameObject.SetActive(false);
         }
+    }
+
+    public void SetIntentionIconLocation()
+    {
+        BoxCollider2D box = status.gameObject.GetComponent<BoxCollider2D>();
+        worldPos = box.bounds.center;
+        worldPos.y += (box.size.y / 2) + 0.5f;
+    }
+
+    public IntentionIcon CreateIntention1()
+    {
+        intentionIcons[1].gameObject.SetActive(false);
+        IntentionIcon icon = intentionIcons[0];
+        icon.gameObject.SetActive(true);
+        icon.transform.DOMove(worldPos, 0f);
+        return icon;
+    }
+
+    public IntentionIcon CreateIntention2()
+    {
+        intentionIcons[0].transform.DOMove(worldPos- intentionOffset, 0f);
+        IntentionIcon icon = intentionIcons[1];
+        icon.gameObject.SetActive(true);
+        icon.transform.DOMove(worldPos + intentionOffset, 0f);
+        return icon;
     }
 }

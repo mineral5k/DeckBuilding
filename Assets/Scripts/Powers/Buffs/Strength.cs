@@ -7,7 +7,7 @@ public class Strength : Power
     public override string IconName => "Strength";
     public override string PowerName => "힘";
 
-    public override string Description => $"공격시 피해를를 {amount}만큼 증가시킵니다.";
+    public override string Description => $"공격시 피해를 {amount}만큼 증가시킵니다.";
     
     
     public bool isBuff = true; // true = 버프, false = 디버프

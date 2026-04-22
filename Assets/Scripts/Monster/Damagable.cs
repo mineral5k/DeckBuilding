@@ -7,7 +7,7 @@ using UnityEngine;
 public class Damagable : MonoBehaviour
 {
     public event Action OnHPChanged;
-    private HPBarUI hpBarUI;
+    public HPBarUI hpBarUI;
     public BattleManager battleManager;
     public Damagable target = null;
 
@@ -56,6 +56,7 @@ public class Damagable : MonoBehaviour
             Debug.Log(" 몬스터 생성");
             target = bm.Player;
         }
+        IntentionOfPattern0();
     }
 
     public void HPBarUIUpdate()
@@ -157,6 +158,13 @@ public class Damagable : MonoBehaviour
 
 
     }
+
+    public virtual void IntentionOfPattern0()
+    {
+
+    }
+    
+    
 
     void OnMouseEnter()
     {

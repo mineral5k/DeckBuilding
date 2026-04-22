@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,14 @@ public class PowerDescPannel : MonoBehaviour
     [SerializeField] private Image powerIcon;
     [SerializeField] private TextMeshProUGUI powerName;
     [SerializeField] private TextMeshProUGUI powerDesc;
+
+    public void SetLocation(Damagable damagable)
+    {
+        if (damagable is Monster)
+        {
+            transform.DOLocalMoveX(-3f, 0);
+        }
+    }
 
     public void AllocatePower(Power power)
     {
