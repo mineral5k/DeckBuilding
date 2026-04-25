@@ -16,7 +16,7 @@ public class DeckManager : MonoBehaviour
 
     [Header("배치 설정")]
     public float cardSpacing = 1.2f;    // 월드 단위 간격 (약 1~1.5 유닛 추천)
-    public Vector3 centerPoint = new Vector3(0, -4f, 0); // 화면 하단 중앙 월드 좌표
+    public Vector3 centerPoint = new Vector3(0, -3.4f, 0); // 화면 하단 중앙 월드 좌표
     public float arcIntensity = 0.2f;   // 부채꼴 곡선 강도
     public float rotationIntensity = 5f; // 회전 강도
     [Space(10f)]
@@ -95,7 +95,7 @@ public class DeckManager : MonoBehaviour
             // 2. 부채꼴(Arc) Y축 보정
             // 중앙(0)에서 멀어질수록 아래로 내려가게 계산
             float centerOffset = i - (count - 1) / 2f;
-            float targetY = centerPoint.y - (Mathf.Abs(centerOffset) * Mathf.Abs(centerOffset) * arcIntensity);
+            float targetY = centerPoint.y;  /* - (Mathf.Abs(centerOffset) * Mathf.Abs(centerOffset) * arcIntensity); < 부채꼴로 만드는 코드   */
 
             // 3. Z-Order (앞뒤 순서) 설정
             // 오른쪽 카드가 왼쪽 카드보다 조금 더 앞에 오게 (혹은 반대)
@@ -109,7 +109,7 @@ public class DeckManager : MonoBehaviour
 
             // 5. 이동 및 회전 적용 (DOTween)
             handCards[i].transform.DOMove(targetPos, 0.4f).SetEase(Ease.OutCubic);
-            handCards[i].transform.DORotateQuaternion(targetRot, 0.4f);
+            //handCards[i].transform.DORotateQuaternion(targetRot, 0.4f);
 
             handCards[i].GetComponent<SortingGroup>().sortingOrder = i;
         }

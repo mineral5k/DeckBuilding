@@ -140,7 +140,7 @@ public class Card : MonoBehaviour
     void OnMouseOver()
     {
         // 마우스를 올리면 오브젝트를 크게 만듦
-        transform.DOScale(1.2f, 0.1f);
+        transform.DOScale(1.3f, 0.1f);
         GetComponent<SortingGroup>().sortingOrder = 100;
     }
 
