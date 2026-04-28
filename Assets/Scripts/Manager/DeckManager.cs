@@ -20,7 +20,13 @@ public class DeckManager : MonoBehaviour
     public float arcIntensity = 0.2f;   // 부채꼴 곡선 강도
     public float rotationIntensity = 5f; // 회전 강도
     [Space(10f)]
-    
+
+    [SerializeField] private Transform preDrawCardDeck;
+    [SerializeField] private Transform usedCardDeck;
+
+    private Vector3 preDrawCardDeckPos;
+    private Vector3 usedCardDeckPos;
+
     [SerializeField]
     private GameObject cardTemplete;
     private void Awake()
@@ -37,6 +43,10 @@ public class DeckManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        preDrawCardDeckPos = Camera.main.ScreenToWorldPoint(preDrawCardDeck.position);
+        usedCardDeckPos = Camera.main.ScreenToWorldPoint(usedCardDeck.position);
+
     }
 
     public void AddCard(int id, List<GameObject> deck)              // id : 카드 아이디 deck : 어디에 추가하는지 
@@ -60,13 +70,25 @@ public class DeckManager : MonoBehaviour
         preDrawCards.Shuffle();
     }
 
-    public void DrawCard()   
+    public void DrawCard(int amount)   
     {
+        for (int i = 0; i < amount; i++)
+        {
+            AnimManager.Instance.Enqueue(DrawCardCorutine());
+            UpdateHand();
+        }
+    }
+
+    public IEnumerator DrawCardCorutine()
+    {
+        yield return new WaitForSeconds(0.01f);
         if (preDrawCards.Count == 0) ShuffleDeck();           // 뽑을 카드가 없을 때 다시 섞기
+        preDrawCards[0].transform.position = preDrawCardDeckPos;
         preDrawCards[0].SetActive(true);
         handCards.Add(preDrawCards[0]);
         preDrawCards.RemoveAt(0);
-        UpdateHand();
+        
+        yield return null;
     }
 
     public void DiscardAllHand()                           // 턴 종료 시 모든 핸드 버림
@@ -80,8 +102,13 @@ public class DeckManager : MonoBehaviour
 
     public void UpdateHand()                                 // 핸드의 카드 위치 조정
     {
+        AnimManager.Instance.Enqueue(UpdateHandCoroutine());
+    }
+
+    public IEnumerator UpdateHandCoroutine()
+    {
         int count = handCards.Count;
-        if (count == 0) return;
+        if (count == 0) yield break;
 
         // 중앙으로부터 왼쪽 시작점 계산
         float totalWidth = (count - 1) * cardSpacing;
@@ -108,12 +135,12 @@ public class DeckManager : MonoBehaviour
             Quaternion targetRot = Quaternion.Euler(0, 0, targetRotZ);
 
             // 5. 이동 및 회전 적용 (DOTween)
-            handCards[i].transform.DOMove(targetPos, 0.4f).SetEase(Ease.OutCubic);
+            handCards[i].transform.DOMove(targetPos, 0.2f).SetEase(Ease.OutCubic);
             //handCards[i].transform.DORotateQuaternion(targetRot, 0.4f);
 
             handCards[i].GetComponent<SortingGroup>().sortingOrder = i;
         }
-    
+        yield return new WaitForSeconds(0.2f);
     }
 
     public void MoveCard(List<GameObject> from, List<GameObject> to, GameObject card)

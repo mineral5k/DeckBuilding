@@ -93,11 +93,8 @@ public class BattleManager : MonoBehaviour
         BattleEvents.OnTurnStart?.Invoke();
         Player.ResetShield();
         //playerStatus.energy = playerStatus.maxEnergy;
-        DeckManager.Instance.DrawCard();
-        DeckManager.Instance.DrawCard();
-        DeckManager.Instance.DrawCard();
-        DeckManager.Instance.DrawCard();
-        DeckManager.Instance.DrawCard();
+        DeckManager.Instance.DrawCard(5);
+        
     }
 
     public void PlayerTurnEnd()
