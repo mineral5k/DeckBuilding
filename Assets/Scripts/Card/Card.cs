@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using TMPro;
 using UnityEngine;
@@ -127,6 +128,7 @@ public class Card : MonoBehaviour
             else if (effect is UtilityEffect) value = cardData.utilityAmount;
             effect.Excute(player.target, value);
         }
+        DeckManager.Instance.UseCard(gameObject);
     }
 
 

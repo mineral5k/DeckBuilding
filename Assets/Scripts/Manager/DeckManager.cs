@@ -1,8 +1,10 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 public class DeckManager : MonoBehaviour
 {
@@ -59,21 +61,39 @@ public class DeckManager : MonoBehaviour
 
     public void BattleDeckSetting()                               // 전투 시작시 세팅
     {
-        preDrawCards = playerDeck;
+        preDrawCards = new List<GameObject>(playerDeck);
         preDrawCards.Shuffle();
         
     }
 
     public void ShuffleDeck()                                 //카드 섞기                        
     {
-        preDrawCards = usedCards;
+        //preDrawCards = usedCards;
+        //preDrawCards.Shuffle();
+        preDrawCards = new List<GameObject>(usedCards);
         preDrawCards.Shuffle();
+        AnimManager.Instance.Enqueue(ShuffleDeckCoroutine());
+    }
+
+    public IEnumerator ShuffleDeckCoroutine()
+    {
+        for (int index = usedCards.Count - 1; index >= 0; index--)
+        {
+            StartCoroutine(MoveCardWithTrailEffectToThePreDrawDeck(usedCards[index]));
+            usedCards.Remove(usedCards[index]);
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForSeconds(2.2f);
     }
 
     public void DrawCard(int amount)   
     {
         for (int i = 0; i < amount; i++)
         {
+            if (preDrawCards.Count ==0)
+            {
+                ShuffleDeck();
+            }
             AnimManager.Instance.Enqueue(DrawCardCorutine());
             UpdateHand();
         }
@@ -82,7 +102,7 @@ public class DeckManager : MonoBehaviour
     public IEnumerator DrawCardCorutine()
     {
         yield return new WaitForSeconds(0.01f);
-        if (preDrawCards.Count == 0) ShuffleDeck();           // 뽑을 카드가 없을 때 다시 섞기
+        //if (preDrawCards.Count == 0) ShuffleDeck();           // 뽑을 카드가 없을 때 다시 섞기
         preDrawCards[0].transform.position = preDrawCardDeckPos;
         preDrawCards[0].SetActive(true);
         handCards.Add(preDrawCards[0]);
@@ -91,13 +111,62 @@ public class DeckManager : MonoBehaviour
         yield return null;
     }
 
+    public void UseCard(GameObject card)
+    {
+        AnimManager.Instance.Enqueue(MoveCardWithTrailEffectToTheUsedDeck(card));
+    }
+
+    public IEnumerator MoveCardWithTrailEffectToTheUsedDeck(GameObject card)
+    {
+        Vector3 destination = usedCardDeckPos;
+        destination.z = 0;
+        float yOffset = Random.Range(-0.5f, 0.5f);
+        TrailRenderer trail = card.GetComponent<TrailRenderer>();
+        trail.enabled = true;
+
+        MoveCard(handCards, usedCards, card);
+
+        Sequence seq = card.transform.DOJump(destination, 4f + yOffset, 1, 1f);
+        seq.Join(card.transform.DOScale(0.2f, 1f));
+        yield return seq.WaitForCompletion();
+
+        card.SetActive(false);
+        card.transform.localScale = Vector3.one;
+        trail.enabled = false;
+        
+    }
+
+    public IEnumerator MoveCardWithTrailEffectToThePreDrawDeck(GameObject card)
+    {
+        card.SetActive(true);
+        Vector3 destination = preDrawCardDeckPos;
+        destination.z = 0;
+        float yOffset = Random.Range(-2f, 2f);
+        TrailRenderer trail = card.GetComponent<TrailRenderer>();
+        trail.enabled = true;
+
+        Sequence seq = card.transform.DOJump(destination, 4f + yOffset, 1, 2f);
+        seq.Join(card.transform.DOScale(0.2f, 2f));
+        yield return seq.WaitForCompletion();
+
+        card.SetActive(false);
+        card.transform.localScale = Vector3.one;
+        trail.enabled = false;
+
+    }
+
     public void DiscardAllHand()                           // 턴 종료 시 모든 핸드 버림
     {
+        AnimManager.Instance.Enqueue(DiscardAllHandCoroutine());
+    }
 
-        for(int index = handCards.Count-1; index>=0; index--)            
+    public IEnumerator DiscardAllHandCoroutine()
+    {
+        for (int index = handCards.Count - 1; index >= 0; index--)
         {
-            MoveCard(handCards, usedCards, handCards[index]);
+            StartCoroutine(MoveCardWithTrailEffectToTheUsedDeck(handCards[index]));
         }
+        yield return new WaitForSeconds(1.2f);
     }
 
     public void UpdateHand()                                 // 핸드의 카드 위치 조정

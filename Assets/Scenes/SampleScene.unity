@@ -738,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5565434406331415917, guid: d6abb139f5d8dda45a50bc9e909ce9b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6920dff9af89934459506c821ef52486, type: 2}
     - target: {fileID: 4072917201179440669, guid: d6abb139f5d8dda45a50bc9e909ce9b0, type: 3}
       propertyPath: m_Name
       value: CardTemplate

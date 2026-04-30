@@ -61,6 +61,7 @@ public class BattleManager : MonoBehaviour
         turnCount = 0;
         //playerStatus = GameManager.Instance.Player.Status;
         Player.Initialize(this);
+        DeckManager.Instance.BattleDeckSetting();
         TurnStart();
         
     }
@@ -77,7 +78,7 @@ public class BattleManager : MonoBehaviour
     public void DevSetting()
     {
         //playerStatus.energy = playerStatus.maxEnergy;
-        DeckManager.Instance.preDrawCards = DeckManager.Instance.playerDeck;   // 임시 나중에 반드시 삭제
+        //DeckManager.Instance.preDrawCards = DeckManager.Instance.playerDeck;   // 임시 나중에 반드시 삭제
         //DeckManager.Instance.DrawCard();
         //DeckManager.Instance.DrawCard();
         //DeckManager.Instance.DrawCard();
