@@ -120,12 +120,24 @@ public class Damagable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHP -= damage;
-        OnHPChanged?.Invoke();
-        if (currentHP <= 0)
+        if (damage <= shield)
         {
-            Die();
+            shield -= damage;
         }
+
+        else if (damage >shield)
+        {
+            int hpDamage = damage - shield;
+            shield = 0;
+            currentHP -= hpDamage;
+            OnHPChanged?.Invoke();
+            if (currentHP <= 0)
+            {
+                Die();
+            }
+        }
+
+       
     }
 
     public void GainShield(int value)

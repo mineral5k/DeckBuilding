@@ -5,8 +5,9 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] private GameObject skeletonPrefab;
-    //private PlayerStatus playerStatus;
+    [SerializeField] private EnergyText EnergyText;
     public PlayerStatus Player => GameManager.Instance.Player.Status;
+    
     
 
     private int turnCount = 0;
@@ -61,6 +62,7 @@ public class BattleManager : MonoBehaviour
         turnCount = 0;
         //playerStatus = GameManager.Instance.Player.Status;
         Player.Initialize(this);
+        Player.OnEnergyChanged += EnergyText.UpdateEnergyUI;
         DeckManager.Instance.BattleDeckSetting();
         TurnStart();
         
@@ -95,6 +97,7 @@ public class BattleManager : MonoBehaviour
         Player.ResetShield();
         //playerStatus.energy = playerStatus.maxEnergy;
         DeckManager.Instance.DrawCard(5);
+        Player.Energy = Player.MaxEnergy;
         
     }
 

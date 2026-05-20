@@ -156,7 +156,11 @@ public class Card : MonoBehaviour
         drawLine.isDraw = false;
         if (GameManager.Instance.Player.Status.target!=null)
         {
-            UseCard();
+            if (player.Energy >= cardData.cost)
+            {
+                player.Energy -= cardData.cost;
+                UseCard();
+            }
         }
         transform.DOScale(1.0f, 0.1f);
         DeckManager.Instance.UpdateHand();
