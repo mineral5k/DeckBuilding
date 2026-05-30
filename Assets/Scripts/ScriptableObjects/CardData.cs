@@ -17,7 +17,8 @@ public class CardData : ScriptableObject
     public int deffense;
     public int utilityAmount;
     public string description;
-    public List<CardEffect> effects; 
+    public List<CardEffect> effects;
+    public List<CardKeywardEffect> effectsToCard;
 
 
 }
@@ -40,6 +41,12 @@ public abstract class DeffenseEffect : CardEffect
 public abstract class UtilityEffect : CardEffect
 {
 
+}
+
+public abstract class CardKeywardEffect : CardEffect
+{
+    protected Card cardOfEffect;
+    public abstract void SetCard(Card card);
 }
 
 

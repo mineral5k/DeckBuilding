@@ -32,6 +32,10 @@ public class Card : MonoBehaviour
     private Color damageColor;   // 버프로 데미지나 방어도가 높아지면 초록색, 낮아지면 빨간색으로 숫자 표시
     private Color deffenseColor;
 
+    [SerializeField] private KeywardDescPannel pannels;
+    public List<CardKeyward> keywards = new List<CardKeyward>();
+    public List<string[]> KeywardDescs = new List<string[]>();
+
 
 
     private void Awake()
@@ -67,6 +71,12 @@ public class Card : MonoBehaviour
             case CardType.Debuff:
                 typeText.text = "상태이상";
                 break;
+        }
+
+        foreach ( var effect in cardData.effectsToCard )
+        {
+            effect.SetCard(this);
+            effect.Excute(player.target, 0);
         }
         UpdateUI();
         
@@ -128,7 +138,7 @@ public class Card : MonoBehaviour
             else if (effect is UtilityEffect) value = cardData.utilityAmount;
             effect.Excute(player.target, value);
         }
-        DeckManager.Instance.UseCard(gameObject);
+        DeckManager.Instance.UseCard(gameObject,keywards);
     }
 
 
@@ -144,6 +154,7 @@ public class Card : MonoBehaviour
         // 마우스를 올리면 오브젝트를 크게 만듦
         transform.DOScale(1.3f, 0.1f);
         GetComponent<SortingGroup>().sortingOrder = 100;
+        pannels.ShowPannels(KeywardDescs);
     }
 
     private void OnMouseDown()
@@ -163,6 +174,7 @@ public class Card : MonoBehaviour
             }
         }
         transform.DOScale(1.0f, 0.1f);
+        pannels.HidePannels();
         DeckManager.Instance.UpdateHand();
     }
 
@@ -171,6 +183,7 @@ public class Card : MonoBehaviour
         if (Input.GetMouseButton(0)) return;         //선택해서 움직이는 중이면 유지
         // 마우스가 나가면 원래 크기로 복구
         transform.DOScale(1.0f, 0.1f);
+        pannels.HidePannels();
         DeckManager.Instance.UpdateHand();
     }
 }

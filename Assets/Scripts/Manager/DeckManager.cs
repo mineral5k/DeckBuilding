@@ -111,9 +111,17 @@ public class DeckManager : MonoBehaviour
         yield return null;
     }
 
-    public void UseCard(GameObject card)
+    public void UseCard(GameObject card, List<CardKeyward> keywards)
     {
-        AnimManager.Instance.Enqueue(MoveCardWithTrailEffectToTheUsedDeck(card));
+        if (keywards.Contains(CardKeyward.Exhaust))
+        {
+            MoveCard(handCards, exhaustedCards, card);
+            card.SetActive(false);
+        }
+        else
+        {
+            AnimManager.Instance.Enqueue(MoveCardWithTrailEffectToTheUsedDeck(card));
+        }
     }
 
     public IEnumerator MoveCardWithTrailEffectToTheUsedDeck(GameObject card)
@@ -231,8 +239,8 @@ public class DeckManager : MonoBehaviour
         AddCard(1, playerDeck);
         AddCard(1, playerDeck);
         AddCard(2, playerDeck);
-        AddCard(2, playerDeck);
         AddCard(3, playerDeck);
+        AddCard(4, playerDeck);
 
     }
 

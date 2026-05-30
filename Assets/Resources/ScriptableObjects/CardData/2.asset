@@ -20,6 +20,8 @@ MonoBehaviour:
   isTargetting: 0
   damage: 0
   deffense: 5
+  utilityAmount: 0
   description: "Deffense\uC758 \uBC29\uC5B4\uB3C4\uB97C \uC5BB\uB294\uB2E4."
   effects:
   - {fileID: 11400000, guid: b5dc611015aa9ca4bb14a7380861d9b1, type: 2}
+  effectsToCard: []

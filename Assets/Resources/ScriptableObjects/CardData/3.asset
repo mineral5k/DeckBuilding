@@ -20,8 +20,11 @@ MonoBehaviour:
   isTargetting: 1
   damage: 11
   deffense: 0
+  utilityAmount: 0
   description: "\uC801\uC5D0\uAC8C Damage\uC758 \uD53C\uD574\uB97C \uCD94\uACE0 \uCDE8\uC57D
     2\uB97C \uBD80\uC5EC\uD569\uB2C8\uB2E4."
   effects:
   - {fileID: 11400000, guid: 421b7073183469b44bba9ec9e525699f, type: 2}
   - {fileID: 11400000, guid: 59c162ac0ec1a1245ba642d844921438, type: 2}
+  effectsToCard:
+  - {fileID: 11400000, guid: 19811caba8f0c794a9e8d5d6a87c93fd, type: 2}
