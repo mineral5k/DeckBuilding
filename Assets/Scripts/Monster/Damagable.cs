@@ -10,7 +10,8 @@ public class Damagable : MonoBehaviour
     public HPBarUI hpBarUI;
     public BattleManager battleManager;
     public Damagable target = null;
-
+    public Animator animator;
+    private GameObject DamagePopUpObject;
 
     protected int maxHP ;
     public int MaxHP
@@ -42,10 +43,12 @@ public class Damagable : MonoBehaviour
     protected void Awake()
     {
         GameObject barUI = Resources.Load<GameObject>("Prefabs/UI/HPBarUI");
+        DamagePopUpObject = Resources.Load<GameObject>("Prefabs/UI/DamagePopUp");
         GameObject bar = Instantiate(barUI,gameObject.transform);
         hpBarUI = bar.GetComponent<HPBarUI>();
         hpBarUI.Init(this);
         gameObject.AddComponent<BoxHighlite>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void Initialize(BattleManager bm)
@@ -123,6 +126,7 @@ public class Damagable : MonoBehaviour
         if (damage <= shield)
         {
             shield -= damage;
+            PopUpDamage("Blocked");
         }
 
         else if (damage >shield)
@@ -130,14 +134,26 @@ public class Damagable : MonoBehaviour
             int hpDamage = damage - shield;
             shield = 0;
             currentHP -= hpDamage;
+            PopUpDamage(hpDamage.ToString());
             OnHPChanged?.Invoke();
             if (currentHP <= 0)
             {
+                animator.SetBool("IsDead", true);
                 Die();
+            }
+            else
+            {
+                animator.SetTrigger("HurtTrigger");
             }
         }
 
        
+    }
+
+    public void PopUpDamage(string damage)
+    {
+        Vector3 position = new Vector3 (transform.position.x + 1.5f, transform.position.y+2f, transform.position.z);
+        Instantiate(DamagePopUpObject,position,Quaternion.identity).GetComponent<DamagePopUp>().PopUp(damage);
     }
 
     public void GainShield(int value)
@@ -162,6 +178,7 @@ public class Damagable : MonoBehaviour
     public void Attack(Damagable enemy,int damage)
     {
         int finalDamage = CalcDamage(enemy, damage);
+        animator.SetTrigger("AttackTrigger");
         enemy.TakeDamage(finalDamage);
     }
 
