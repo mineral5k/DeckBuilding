@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
         get { return status; }
     }
 
-    public Card card;
 
     private void Start()
     {
@@ -18,8 +17,6 @@ public class Player : MonoBehaviour
         GameManager.Instance.Player = this;
         gameObject.AddComponent<PlayerStatus>();
         status = gameObject.GetComponent<PlayerStatus>();
-        //임시 코드 
-        card.SetCard(1);
 
     }
 }

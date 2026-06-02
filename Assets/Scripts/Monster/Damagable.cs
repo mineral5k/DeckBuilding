@@ -182,10 +182,9 @@ public class Damagable : MonoBehaviour
         enemy.TakeDamage(finalDamage);
     }
 
-    public void Die()
+    public virtual void Die()
     {
-
-
+        
     }
 
     public virtual void IntentionOfPattern0()

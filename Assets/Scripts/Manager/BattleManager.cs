@@ -38,10 +38,11 @@ public class BattleManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("정의되지 않은 battleId입니다!");
+                Debug.LogWarning("정의되지 않은 battleId입니다!" + battleId);
                 monsterNames = new string[] { "Skeleton" };        // 임시 코드 
                 actualEnemyLocations = enemyLocations1;
                 break;
+            
         }
         
         for(int i = 0; i < monsterNames.Length; i++)
@@ -130,5 +131,19 @@ public class BattleManager : MonoBehaviour
         EnemyTurnStart();
         EnemyTurnEnd(); 
         TurnStart();
+    }
+
+    public void MonsterDie(Monster monster)
+    {
+        enemies.Remove(monster);
+        if (enemies.Count ==0 )
+        {
+            WinStage();
+        }
+    }
+
+    public void WinStage()
+    {
+
     }
 }

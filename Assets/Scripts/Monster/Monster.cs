@@ -11,6 +11,15 @@ public class Monster : Damagable
 
     }
 
-    
+    public override void Die()
+    {
+        hpBarUI.gameObject.SetActive(false);
+        if (this is Monster)
+        {
+            battleManager.MonsterDie(this);
+        }
+    }
+
+
 
 }

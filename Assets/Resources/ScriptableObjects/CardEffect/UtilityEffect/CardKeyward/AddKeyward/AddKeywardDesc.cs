@@ -20,7 +20,7 @@ public class AddKeywardDesc : CardKeywardEffect
         }
         else
         {
-            Debug.LogError($"{keywardTitle}은 존재하지 않는 키워드입니다!");
+            Debug.LogWarning($"{keywardTitle}은 존재하지 않는 키워드입니다!");
         }
 
         // cardOfEffect.keywards.Add(CardKeyward.Exhaust);

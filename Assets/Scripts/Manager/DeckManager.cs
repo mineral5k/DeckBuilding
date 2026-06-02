@@ -102,7 +102,12 @@ public class DeckManager : MonoBehaviour
     public IEnumerator DrawCardCorutine()
     {
         yield return new WaitForSeconds(0.01f);
-        //if (preDrawCards.Count == 0) ShuffleDeck();           // 뽑을 카드가 없을 때 다시 섞기
+        if (preDrawCards.Count == 0)         // 뽑을 카드가 없을 때 다시 섞기
+        {
+            preDrawCards = new List<GameObject>(usedCards);
+            preDrawCards.Shuffle();
+            yield return StartCoroutine(ShuffleDeckCoroutine());
+        }
         preDrawCards[0].transform.position = preDrawCardDeckPos;
         preDrawCards[0].SetActive(true);
         handCards.Add(preDrawCards[0]);

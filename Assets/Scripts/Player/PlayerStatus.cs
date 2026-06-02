@@ -38,4 +38,9 @@ public class PlayerStatus : Damagable
     {
     }
 
+    public override void Die()
+    {
+        
+    }
+
 }
