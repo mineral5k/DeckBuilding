@@ -55,8 +55,8 @@ MonoBehaviour:
   - {fileID: 7708307179943407478}
   descs:
   - {fileID: 7149019161718054949}
-  - {fileID: 7149019161718054949}
-  - {fileID: 7149019161718054949}
+  - {fileID: 1206338365498517557}
+  - {fileID: 5992217462264219380}
 --- !u!1 &857908617461688305
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,8 +122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uACA9\uC2DC \uD53C\uD574\uB97C \uB298\uB9B0\uB2E4  \uC0D8\uD50C
-    \uD14D\uC2A4\uD2B8  \uC0D8\uD50C\uD14D\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2A4\uC2B7\uC2A4\uD2B8"
+  m_text: 544545454
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f838049b8ffaac9498c64b2c28a6a7ac, type: 2}
   m_sharedMaterial: {fileID: -7861624030195555587, guid: f838049b8ffaac9498c64b2c28a6a7ac, type: 2}
@@ -1022,7 +1021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD798"
+  m_text: 854546
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f838049b8ffaac9498c64b2c28a6a7ac, type: 2}
   m_sharedMaterial: {fileID: -7861624030195555587, guid: f838049b8ffaac9498c64b2c28a6a7ac, type: 2}

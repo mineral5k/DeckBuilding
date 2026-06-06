@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47e3ff514f0f83342899bf81822c6068, type: 3}
-  m_Name: 3
+  m_Name: 7
   m_EditorClassIdentifier: 
-  cardId: 3
-  cardName: "\uAC15\uD0C0"
-  cost: 2
+  cardId: 7
+  cardName: "\uC5F0\uC18D\uBCA0\uAE30"
+  cost: 0
   type: 0
-  image: {fileID: 21300000, guid: 33898f57f4d135e478bab2cae7a1cc10, type: 3}
-  isTargetting: 1
-  damage: 11
+  image: {fileID: 21300000, guid: ada1b6c39844d314a8f4ee087d5c3fab, type: 3}
+  isTargetting: 0
+  damage: 7
   deffense: 0
   utilityAmount: 0
-  description: "\uC801\uC5D0\uAC8C Damage\uC758 \uD53C\uD574\uB97C \uCD94\uACE0 \uCDE8\uC57D
-    2\uB97C \uBD80\uC5EC\uD55C\uB2E4."
+  description: "Damage\uC758 \uD53C\uD574\uB97C \uB450\uBC88 \uC900\uB2E4."
   effects:
   - {fileID: 11400000, guid: 421b7073183469b44bba9ec9e525699f, type: 2}
-  - {fileID: 11400000, guid: 59c162ac0ec1a1245ba642d844921438, type: 2}
-  effectsToCard:
-  - {fileID: 11400000, guid: 19811caba8f0c794a9e8d5d6a87c93fd, type: 2}
+  - {fileID: 11400000, guid: eb04b2975fdcabe40abdf47fa33b32d0, type: 2}
+  effectsToCard: []

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,6 +13,13 @@ public class KeywardDescPannel : MonoBehaviour
 
     public void ShowPannels(List<string[]> keywards)
     {
+        if (gameObject.transform.position.x >1 && GetComponentInParent<Card>() is CardSelectCard )
+        {
+            foreach ( GameObject pannel in pannels )
+            {
+                pannel.transform.DOMoveX(-0.6f, 0f); 
+            }
+        }
         for (int i = 0; i < keywards.Count; i++)
         {
             if(i>2) break;
@@ -23,6 +31,7 @@ public class KeywardDescPannel : MonoBehaviour
 
     public void HidePannels()
     {
+        
         foreach (GameObject pannel in pannels)
         {
             pannel.SetActive(false);

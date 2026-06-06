@@ -177,6 +177,10 @@ public class DeckManager : MonoBehaviour
     {
         for (int index = handCards.Count - 1; index >= 0; index--)
         {
+            if(handCards[index].GetComponent<Card>().keywards.Contains(CardKeyward.Retain))   // 카드의 키워드 중 Retain이 있으면
+            {
+                continue;
+            }
             StartCoroutine(MoveCardWithTrailEffectToTheUsedDeck(handCards[index]));
         }
         yield return new WaitForSeconds(1.2f);
@@ -241,16 +245,15 @@ public class DeckManager : MonoBehaviour
 
     public void GetBasicDeck()
     {
-        AddCard(1, playerDeck);
-        AddCard(1, playerDeck);
-        AddCard(1, playerDeck);
-        AddCard(1, playerDeck);
-        AddCard(2, playerDeck);
-        AddCard(2, playerDeck);
+        AddCard(5, playerDeck);
+        AddCard(6, playerDeck);
+        AddCard(7, playerDeck);
+        AddCard(8, playerDeck);
+        AddCard(9, playerDeck);
+        AddCard(10, playerDeck);
         AddCard(2, playerDeck);
         AddCard(2, playerDeck);
         AddCard(3, playerDeck);
-        AddCard(4, playerDeck);
 
     }
 

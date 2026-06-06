@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9960375075515ad4ea780ce61e424e54, type: 3}
-  m_Name: InflictVulnerable_2
+  m_Script: {fileID: 11500000, guid: f568e9f382d1bf24cb270cda52f03418, type: 3}
+  m_Name: GainDeffenseNextTurn_6
   m_EditorClassIdentifier: 
-  amount: 2
-  powerName: Vulnerable
+  amount: 6
+  powerName: DeffenseNextTurn

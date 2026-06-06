@@ -146,8 +146,21 @@ public class Damagable : MonoBehaviour
                 animator.SetTrigger("HurtTrigger");
             }
         }
+    }
 
-       
+    public void TakeHPDamage(int damage)
+    {
+        currentHP -= damage;
+        PopUpDamage(damage.ToString());
+        if (currentHP <= 0)
+        {
+            animator.SetBool("IsDead", true);
+            Die();
+        }
+        else
+        {
+            animator.SetTrigger("HurtTrigger");
+        }
     }
 
     public void PopUpDamage(string damage)

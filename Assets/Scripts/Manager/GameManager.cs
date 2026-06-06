@@ -44,4 +44,10 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+    public void SelectCard()
+    {
+        CardSelect cardSelect = Instantiate(Resources.Load<GameObject>("Prefabs/Card/CardSelect")).GetComponent<CardSelect>();
+        cardSelect.SelectCard(3);
+    }
 }

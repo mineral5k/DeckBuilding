@@ -13,7 +13,7 @@ public class Card : MonoBehaviour
 {
     public event Action OnThisCardUIUpdate;
 
-    private CardData cardData;
+    protected CardData cardData;
     private SpriteRenderer spriteRenderer;
     public TextMeshPro costText;
     public TextMeshPro descriptionText;
@@ -32,7 +32,7 @@ public class Card : MonoBehaviour
     private Color damageColor;   // 버프로 데미지나 방어도가 높아지면 초록색, 낮아지면 빨간색으로 숫자 표시
     private Color deffenseColor;
 
-    [SerializeField] private KeywardDescPannel pannels;
+    [SerializeField] protected KeywardDescPannel pannels;
     public List<CardKeyward> keywards = new List<CardKeyward>();
     public List<string[]> KeywardDescs = new List<string[]>();
 
@@ -52,6 +52,8 @@ public class Card : MonoBehaviour
 
     public void SetCard( int  cardId )
     {
+        keywards.Clear();
+        KeywardDescs.Clear();
         cardData = Resources.Load<CardData>($"ScriptableObjects/CardData/{cardId}");
         OnThisCardUIUpdate?.Invoke();
         cardImage.sprite = cardData.image;
@@ -149,7 +151,7 @@ public class Card : MonoBehaviour
 
 
 
-    void OnMouseOver()
+    void OnMouseEnter()
     {
         // 마우스를 올리면 오브젝트를 크게 만듦
         transform.DOScale(1.3f, 0.1f);

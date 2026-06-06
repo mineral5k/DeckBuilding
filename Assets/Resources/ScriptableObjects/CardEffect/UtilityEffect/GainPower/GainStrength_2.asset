@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GainStrength_2
   m_EditorClassIdentifier: 
   amount: 2
+  powerName: Strength
