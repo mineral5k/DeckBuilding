@@ -23,7 +23,7 @@ MonoBehaviour:
   utilityAmount: 0
   description: "\uC77C\uD68C\uC131, \uD798\uC744 2\uC5BB\uB294\uB2E4."
   effects:
-  - {fileID: 11400000, guid: de6634a547bfc5447a32c9373a8e8de5, type: 2}
+  - {fileID: 11400000, guid: 30ad321d4fd785b4bb58e3fad1fb36cb, type: 2}
   effectsToCard:
   - {fileID: 11400000, guid: 2bc1cbd6a8269354285caaaa838b2a19, type: 2}
   - {fileID: 11400000, guid: 21c040752d7ed19488a476d7508599e5, type: 2}

@@ -38,4 +38,10 @@ public class AnimManager : MonoBehaviour
         isRunning = false;
     }
 
+    public void BattleEnd()
+    {
+        coroutineQueue.Clear();
+        isRunning = false;
+    }
+
 }

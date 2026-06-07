@@ -34,8 +34,14 @@ public class PlayerStatus : Damagable
         currentHP = 80;
         base.Awake();
     }
-    private void Start()
+    
+    public void Resetstatus()
     {
+        attackUp = 0;
+        deffenseUp = 0;
+        vulnuerable = false;
+        weakness = false;
+        fragile = false;
     }
 
     public override void Die()

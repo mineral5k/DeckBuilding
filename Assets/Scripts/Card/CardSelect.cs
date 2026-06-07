@@ -23,7 +23,7 @@ public class CardSelect : MonoBehaviour
     {
         Debug.Log("서제스트 카드");
         System.Random random = new System.Random();
-        var uniqueNumbers = Enumerable.Range(1, 4)
+        var uniqueNumbers = Enumerable.Range(4, 7)
                                       .OrderBy(x => random.Next())
                                       .Take(3)
                                       .ToList();

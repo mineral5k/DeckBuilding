@@ -5,7 +5,6 @@ using UnityEngine;
 public class Skeleton : Monster
 {
 
-
     private void Awake()
     {
         maxHP = 48;
@@ -45,7 +44,7 @@ public class Skeleton : Monster
         Attack(target, 12);
     }
 
-    public override void IntentionOfPattern0()
+    public void IntentionOfPattern0()
     {
         hpBarUI.CreateIntention1().SetIntentionToAttack(12, 1, this);
     }
@@ -78,6 +77,9 @@ public class Skeleton : Monster
         hpBarUI.CreateIntention2().SetIntentionToDebuff();
     }
 
-
+    public override void SetFirstIntention()
+    {
+        IntentionOfPattern0();
+    }
 
 }

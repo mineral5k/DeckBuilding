@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleManager : MonoBehaviour
@@ -35,6 +37,11 @@ public class BattleManager : MonoBehaviour
             case 1:
                 monsterNames = new string[] { "Skeleton"};
                 actualEnemyLocations = enemyLocations1;
+                break;
+
+            case 2:
+                monsterNames = new string[] { "Skeleton2_1", "Skeleton2_2" };
+                actualEnemyLocations = enemyLocations2;
                 break;
 
             default:
@@ -108,14 +115,17 @@ public class BattleManager : MonoBehaviour
 
     }
 
-    public void EnemyTurnStart()
+    public async void EnemyTurnStart()
     {
         BattleEvents.OnEnemyTurnStart?.Invoke();
         foreach (var enemy in enemies )
         {
             enemy.ResetShield();
+            await Task.Delay(1000);
             enemy.NextPattern();
         }
+        EnemyTurnEnd();
+        TurnStart();
     }
 
     public void EnemyTurnEnd()
@@ -128,13 +138,15 @@ public class BattleManager : MonoBehaviour
     {
         PlayerTurnEnd();
         EnemyTurnStart();
-        EnemyTurnEnd(); 
-        TurnStart();
+        //EnemyTurnEnd(); 
+        //TurnStart();
     }
 
-    public void MonsterDie(Monster monster)
+    public async void MonsterDie(Monster monster)
     {
         enemies.Remove(monster);
+        await Task.Delay(1400);
+        Destroy(monster.gameObject);
         if (enemies.Count ==0 )
         {
             WinStage();
@@ -143,6 +155,25 @@ public class BattleManager : MonoBehaviour
 
     public void WinStage()
     {
+        ResetBattleManager();
+        Player.Resetstatus();
+        GameManager.Instance.battleId++;
+        GameManager.Instance.SelectCard();
+    }
 
+    public void ResetBattleManager()
+    {
+        AnimManager.Instance.BattleEnd();
+        foreach (var card in DeckManager.Instance.handCards)
+        {
+            card.SetActive(false);
+        }
+        DeckManager.Instance.handCards.Clear();
+        DeckManager.Instance.usedCards.Clear();
+        DeckManager.Instance.exhaustedCards.Clear();
+        DeckManager.Instance.UpdateHand();
+        turnCount = 0;
+        Player.powers.Clear();
+        BattleEvents.Reset();
     }
 }

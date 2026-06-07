@@ -245,12 +245,14 @@ public class DeckManager : MonoBehaviour
 
     public void GetBasicDeck()
     {
-        AddCard(5, playerDeck);
-        AddCard(6, playerDeck);
-        AddCard(7, playerDeck);
-        AddCard(8, playerDeck);
-        AddCard(9, playerDeck);
-        AddCard(10, playerDeck);
+        AddCard(1, playerDeck);
+        AddCard(1, playerDeck);
+        AddCard(1, playerDeck);
+        AddCard(1, playerDeck);
+        AddCard(1, playerDeck);
+        AddCard(2, playerDeck);
+        AddCard(2, playerDeck);
+        AddCard(2, playerDeck);
         AddCard(2, playerDeck);
         AddCard(2, playerDeck);
         AddCard(3, playerDeck);
