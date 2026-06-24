@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2542411811	PlayBGM			\BGM\PlayBGM	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	195841447	bgmwav	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\EF\{EF0C27FE-5557-94E3-7B38-B81BF530C83D}.wem		\Actor-Mixer Hierarchy\BGM\bgmwav		31887504
+

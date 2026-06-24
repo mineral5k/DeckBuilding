@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EDEE14C5-9026-4BFC-BAF3-866D641DFFDF}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="BGM" ID="{EDEE14C5-9026-4BFC-BAF3-866D641DFFDF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="bgmwav" ID="{E4C3149A-5811-4697-8205-A4CFB666BE7C}" ShortID="621121828">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="bgmwav" ID="{3C99E54D-A64C-43DF-93AE-7017B73D0F84}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="4.15557124696928"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="26.1454690955151"/>
+								<Property Name="LoopBegin" Type="Real64" Value="1.21204161369938"/>
+								<Property Name="LoopEnd" Type="Real64" Value="166.569145178297"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>bgmwav.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="195841447"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="bgmwav" ID="{3C99E54D-A64C-43DF-93AE-7017B73D0F84}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

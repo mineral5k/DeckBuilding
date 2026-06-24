@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9337d68246e08409623355ebd3b812, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 35f4260427cb3246a1eeb77164e87bbf
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 35f4260427cb3246a1eeb77164e87bbf
+    GuidInternal: 
+    m_lastTime: -8584193238929896473
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: e3edea2234fca24dae4780012c296726
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: e3edea2234fca24dae4780012c296726
+    GuidInternal: 
+    m_lastTime: -8584193238931093052
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e3edea2234fca24dae4780012c296726
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+    ParentPath: SoundBanks\Default Work Unit
+    guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+    GuidInternal: 
+    m_lastTime: -8584193210916688378
+    List:
+    - name: Global
+      guid: b7607be9e863bc4d99a5c03a99a93b59
+      id: 1465331116
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+      - ElementName: Global
+        ObjectType: 7
+        guid: b7607be9e863bc4d99a5c03a99a93b59
+      Path: SoundBanks\Default Work Unit\Global
+  EventWwu:
+  - PhysicalPath: Events\BGM.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: BGM
+      ObjectType: 12
+      guid: 920ea18505171f429990c6e8b56b4e4d
+    ParentPath: Events\BGM
+    guid: 920ea18505171f429990c6e8b56b4e4d
+    GuidInternal: 
+    m_lastTime: -8584193211038260650
+    List:
+    - name: PlayBGM
+      guid: 35c51fb949266f47938a75d72bb6edca
+      id: 2542411811
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: BGM
+        ObjectType: 12
+        guid: 920ea18505171f429990c6e8b56b4e4d
+      - ElementName: PlayBGM
+        ObjectType: 3
+        guid: 35c51fb949266f47938a75d72bb6edca
+      Path: Events\BGM\PlayBGM
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 5b0e2a9581781141a1303d14d47aef5c
+    ParentPath: Events\Default Work Unit
+    guid: 5b0e2a9581781141a1303d14d47aef5c
+    GuidInternal: 
+    m_lastTime: -8584193238930885173
+    List: []
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 20769865e2ef0a40b90f9f1640cfeee1
+    ParentPath: Game Parameters\Default Work Unit
+    guid: 20769865e2ef0a40b90f9f1640cfeee1
+    GuidInternal: 
+    m_lastTime: -8584193238930199100
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 50c701f83fd46e4e9308038cc63a6841
+    ParentPath: States\Default Work Unit
+    guid: 50c701f83fd46e4e9308038cc63a6841
+    GuidInternal: 
+    m_lastTime: -8584193238931041537
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8500dbdb58fb12459ec621008e08a96c
+    ParentPath: Switches\Default Work Unit
+    guid: 8500dbdb58fb12459ec621008e08a96c
+    GuidInternal: 
+    m_lastTime: -8584193238930482021
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: effdfc2e4e2f8244b8f49c0504a74d5d
+    ParentPath: Triggers\Default Work Unit
+    guid: effdfc2e4e2f8244b8f49c0504a74d5d
+    GuidInternal: 
+    m_lastTime: -8584193238929472306
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 020000000300000006000000
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 1
+  CurrentPluginConfig: 
