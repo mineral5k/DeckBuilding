@@ -13,8 +13,32 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CARDFLIP = 2044723518U;
+        static const AkUniqueID CARDSWAP = 1937476718U;
+        static const AkUniqueID HURT = 3193947170U;
         static const AkUniqueID PLAYBGM = 2542411811U;
+        static const AkUniqueID SELECT = 1432588725U;
+        static const AkUniqueID SKELETONDIE = 2596504226U;
+        static const AkUniqueID SKELETONHIT = 2460311919U;
+        static const AkUniqueID SWORD = 2454616260U;
+        static const AkUniqueID SWORD2 = 361241790U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace GAMEPLAY_STATE
+        {
+            static const AkUniqueID GROUP = 762757699U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BATTLE = 2937832959U;
+                static const AkUniqueID CARD_SELECT = 1259932846U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace GAMEPLAY_STATE
+
+    } // namespace STATES
 
     namespace BANKS
     {

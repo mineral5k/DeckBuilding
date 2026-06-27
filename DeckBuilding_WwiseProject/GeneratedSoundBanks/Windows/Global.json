@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{E97B60B7-63E8-4DBC-99A5-C03A99A93B59}",
     "Language": "SFX",
-    "Hash": "{E4E856CD-947E-E1DC-9E99-C64A475EA327}",
+    "Hash": "{05DF6051-6687-FDDF-EB6F-959E83753B30}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Global",
     "ShortName": "Global",
     "Path": "Global.bnk",
     "Media": [
+     {
+      "Id": "82394505",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sword2-converted.wav",
+      "CachePath": "CB/{CBF40449-8D01-350F-B638-AC4806FAF603}.wem"
+     },
      {
       "Id": "195841447",
       "Language": "SFX",
@@ -22,9 +30,107 @@
       "Location": "Memory",
       "ShortName": "bgmwav.wav",
       "CachePath": "EF/{EF0C27FE-5557-94E3-7B38-B81BF530C83D}.wem"
+     },
+     {
+      "Id": "310662912",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "selectSfx.wav",
+      "CachePath": "40/{408DA2E2-2700-F646-7F27-7A63AD6CC12F}.wem"
+     },
+     {
+      "Id": "452649857",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "hurt-converted.wav",
+      "CachePath": "CF/{CF3F4AE5-515D-B956-E66C-FBF7ECF5ABE3}.wem"
+     },
+     {
+      "Id": "778999676",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "skeletondie-converted.wav",
+      "CachePath": "91/{919775A6-9465-37D6-3F3D-5799DC607974}.wem"
+     },
+     {
+      "Id": "859024711",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "cardSwap-converted.wav",
+      "CachePath": "56/{563904B2-6520-7CAD-7AA9-C3BFC529485F}.wem"
+     },
+     {
+      "Id": "984303896",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "hitsound-converted.wav",
+      "CachePath": "50/{50C8068C-74C7-89B3-CC8E-C51E99360C6E}.wem"
+     },
+     {
+      "Id": "1048146160",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "cardFlip-converted.wav",
+      "CachePath": "1C/{1CB92286-615F-5450-2322-8C6316EE47C6}.wem"
+     },
+     {
+      "Id": "1058543793",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sword-converted.wav",
+      "CachePath": "AC/{AC2107F7-CB76-9E40-0006-1C9CE903F016}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "2044723518",
+      "Name": "CardFlip",
+      "ObjectPath": "\\Events\\SFX\\Card\\CardFlip",
+      "GUID": "{FA579B2A-CFBE-4504-B417-296EBCA78B95}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.78367347",
+      "DurationMax": "0.78367347",
+      "MediaRefs": [
+       {
+        "Id": "1048146160"
+       }
+      ]
+     },
+     {
+      "Id": "1937476718",
+      "Name": "CardSwap",
+      "ObjectPath": "\\Events\\SFX\\Card\\CardSwap",
+      "GUID": "{13123489-2F0A-449E-8D58-CCC1B4D00179}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.22585025",
+      "DurationMax": "0.4024194",
+      "MediaRefs": [
+       {
+        "Id": "859024711"
+       }
+      ]
+     },
+     {
+      "Id": "3193947170",
+      "Name": "hurt",
+      "ObjectPath": "\\Events\\SFX\\Player\\hurt",
+      "GUID": "{12DBFDEF-F597-485F-9A42-393B886DD878}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.36571428",
+      "DurationMax": "0.36571428",
+      "MediaRefs": [
+       {
+        "Id": "452649857"
+       }
+      ]
+     },
      {
       "Id": "2542411811",
       "Name": "PlayBGM",
@@ -36,10 +142,80 @@
         "Id": "195841447"
        }
       ]
+     },
+     {
+      "Id": "1432588725",
+      "Name": "Select",
+      "ObjectPath": "\\Events\\SFX\\Card\\Select",
+      "GUID": "{3D5DF10D-92FD-4903-B428-110879E16509}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.18716553",
+      "DurationMax": "0.18716553",
+      "MediaRefs": [
+       {
+        "Id": "310662912"
+       }
+      ]
+     },
+     {
+      "Id": "2596504226",
+      "Name": "skeletonDie",
+      "ObjectPath": "\\Events\\SFX\\Enemy\\skeletonDie",
+      "GUID": "{C82D26A0-6569-46C3-BE74-1A57E16C699F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8336961",
+      "DurationMax": "1.8336961",
+      "MediaRefs": [
+       {
+        "Id": "778999676"
+       }
+      ]
+     },
+     {
+      "Id": "2460311919",
+      "Name": "skeletonHit",
+      "ObjectPath": "\\Events\\SFX\\Enemy\\skeletonHit",
+      "GUID": "{7EB61E7E-F38D-4B46-B7A4-89AC3C1A5434}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.34210885",
+      "DurationMax": "0.34210885",
+      "MediaRefs": [
+       {
+        "Id": "984303896"
+       }
+      ]
+     },
+     {
+      "Id": "2454616260",
+      "Name": "sword",
+      "ObjectPath": "\\Events\\SFX\\Player\\sword",
+      "GUID": "{C8F69662-D5E2-48C8-9532-39080CCE85E3}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.23480725",
+      "DurationMax": "0.23480725",
+      "MediaRefs": [
+       {
+        "Id": "1058543793"
+       }
+      ]
+     },
+     {
+      "Id": "361241790",
+      "Name": "sword2",
+      "ObjectPath": "\\Events\\SFX\\Player\\sword2",
+      "GUID": "{21F5D080-43B3-44FD-8764-572BF249B8E4}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5485714",
+      "DurationMax": "0.5485714",
+      "MediaRefs": [
+       {
+        "Id": "82394505"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{3885C4EB-14FF-67E8-4251-D1DB74C21E2D}"
+  "FileHash": "{1608B5E7-88A2-90B0-535B-C9B9B39838C6}"
  }
 }

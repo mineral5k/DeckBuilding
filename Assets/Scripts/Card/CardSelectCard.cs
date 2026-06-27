@@ -17,6 +17,7 @@ public class CardSelectCard : Card
         // 마우스를 올리면 오브젝트를 크게 만듦
         transform.DOScale(2.5f, 0.1f);
         pannels.ShowPannels(KeywardDescs);
+        SoundManager.Instance.PlayCardFlipSound();
     }
 
     private void OnMouseDown()
@@ -26,6 +27,7 @@ public class CardSelectCard : Card
     private void OnMouseUp()
     {
         cardSelect.ClickACard(cardData.cardId);
+        SoundManager.Instance.PlayCardSelectSound();
     }
 
     void OnMouseExit()

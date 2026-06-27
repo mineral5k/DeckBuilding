@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A0325EB6-35A5-4864-8A3D-9B93B055956B}" SchemaVersion="123">
+	<Events>
+		<WorkUnit Name="SFX" ID="{A0325EB6-35A5-4864-8A3D-9B93B055956B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Card" ID="{C41A831D-72B3-4D18-8CE9-347E9DA7F5B5}" ShortID="1057026804">
+					<ChildrenList>
+						<Event Name="CardFlip" ID="{FA579B2A-CFBE-4504-B417-296EBCA78B95}">
+							<ChildrenList>
+								<Action Name="" ID="{548C6ED8-72AA-4297-8861-2B3A1321E711}" ShortID="460434174">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="cardFlip-converted" ID="{39834F21-82DA-4E3D-8689-7441728BEEB5}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="CardSwap" ID="{13123489-2F0A-449E-8D58-CCC1B4D00179}">
+							<ChildrenList>
+								<Action Name="" ID="{7986BB2A-9D69-4DB4-BCDC-EEF5C2A9327D}" ShortID="1073341871">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="cardSwap-converted" ID="{F8DD3EA2-365D-4696-A3C7-E74C770D01AA}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Select" ID="{3D5DF10D-92FD-4903-B428-110879E16509}">
+							<ChildrenList>
+								<Action Name="" ID="{362CBCD2-0092-4378-A9D1-A3A1C7D9F490}" ShortID="1038621936">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="selectSfx" ID="{8F9F90DF-644C-4242-80E9-8BFD5EAE550E}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Player" ID="{6A9AEB30-CFF4-4ADD-9139-11AABD20277B}" ShortID="698230990">
+					<ChildrenList>
+						<Event Name="sword" ID="{C8F69662-D5E2-48C8-9532-39080CCE85E3}">
+							<ChildrenList>
+								<Action Name="" ID="{A654560C-1CBB-40F1-A783-5B9CA6BC1385}" ShortID="475901450">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sword-converted" ID="{1FE581CB-650C-4292-AEAD-8236675F727E}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="sword2" ID="{21F5D080-43B3-44FD-8764-572BF249B8E4}">
+							<ChildrenList>
+								<Action Name="" ID="{F74CE81E-A19B-4DDD-BDCA-B2C60447ECB3}" ShortID="180172096">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sword2-converted" ID="{FC7A85BF-8F70-44FE-A034-4F023B55AA92}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="hurt" ID="{12DBFDEF-F597-485F-9A42-393B886DD878}">
+							<ChildrenList>
+								<Action Name="" ID="{279D3BDA-27F4-47D6-B324-42B40AA0F8B5}" ShortID="574371772">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hurt-converted" ID="{DDD84E4B-9725-4FF6-9CAF-E11DB8F25E91}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{73B68973-1B5F-4BAA-90DE-5200A9B4482E}" ShortID="1017045556">
+					<ChildrenList>
+						<Event Name="skeletonDie" ID="{C82D26A0-6569-46C3-BE74-1A57E16C699F}">
+							<ChildrenList>
+								<Action Name="" ID="{01FFD7DA-8652-4797-8007-87502F9E55D4}" ShortID="816470644">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="skeletondie-converted" ID="{8ED12CC2-2AD4-4A5C-A1C1-16F9F7BF39C9}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="skeletonHit" ID="{7EB61E7E-F38D-4B46-B7A4-89AC3C1A5434}">
+							<ChildrenList>
+								<Action Name="" ID="{54C31DDA-8F73-4C9F-A857-F4408A8B58AE}" ShortID="761559981">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="hitsound-converted" ID="{86C8FA61-FC7F-49A4-A6C9-33E248E14841}" WorkUnitID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

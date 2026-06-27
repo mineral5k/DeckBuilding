@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}" SchemaVersion="123">
+	<AudioObjects>
+		<WorkUnit Name="SFX" ID="{248B0069-0CA3-4868-AD80-ED849D26EB4F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Card" ID="{51B7BE16-B4AB-482D-8CFD-4E1CAC57A19A}" ShortID="389935629">
+					<ChildrenList>
+						<Sound Name="cardFlip-converted" ID="{39834F21-82DA-4E3D-8689-7441728BEEB5}" ShortID="784070809">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="cardFlip-converted" ID="{6EA9ECE3-558C-4B77-A8FF-0B01B54AE6DC}">
+									<Language>SFX</Language>
+									<AudioFile>cardFlip-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1048146160"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="cardFlip-converted" ID="{6EA9ECE3-558C-4B77-A8FF-0B01B54AE6DC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="cardSwap-converted" ID="{F8DD3EA2-365D-4696-A3C7-E74C770D01AA}" ShortID="332260470">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D7BF674D-4888-4C1D-87AF-5B802F71E201}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="500"/>
+													<Property Name="Min" Type="Real64" Value="-500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="cardSwap-converted" ID="{633B4636-7FFB-4544-8BE2-B4CB03394421}">
+									<Language>SFX</Language>
+									<AudioFile>cardSwap-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="859024711"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="cardSwap-converted" ID="{633B4636-7FFB-4544-8BE2-B4CB03394421}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="selectSfx" ID="{8F9F90DF-644C-4242-80E9-8BFD5EAE550E}" ShortID="202142622">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="selectSfx" ID="{14B27710-043D-44DD-BA31-3EDA1EAAB1FF}">
+									<Language>SFX</Language>
+									<AudioFile>selectSfx.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="310662912"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="selectSfx" ID="{14B27710-043D-44DD-BA31-3EDA1EAAB1FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Player" ID="{501E81C7-2928-45B4-B11E-2779069D935E}" ShortID="344778123">
+					<ChildrenList>
+						<Sound Name="sword2-converted" ID="{FC7A85BF-8F70-44FE-A034-4F023B55AA92}" ShortID="990359810">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sword2-converted" ID="{031A480C-13D3-43AF-9A06-947A004BB1CB}">
+									<Language>SFX</Language>
+									<AudioFile>sword2-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="82394505"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sword2-converted" ID="{031A480C-13D3-43AF-9A06-947A004BB1CB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sword-converted" ID="{1FE581CB-650C-4292-AEAD-8236675F727E}" ShortID="209251181">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sword-converted" ID="{F2096676-4CD5-41E5-B5A1-564ED99F06A6}">
+									<Language>SFX</Language>
+									<AudioFile>sword-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1058543793"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sword-converted" ID="{F2096676-4CD5-41E5-B5A1-564ED99F06A6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hurt-converted" ID="{DDD84E4B-9725-4FF6-9CAF-E11DB8F25E91}" ShortID="289053106">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hurt-converted" ID="{688D59F6-2AC1-4559-A981-36E586969436}">
+									<Language>SFX</Language>
+									<AudioFile>hurt-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="452649857"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hurt-converted" ID="{688D59F6-2AC1-4559-A981-36E586969436}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemy" ID="{139132CA-A846-42CD-81AE-D688A2183D68}" ShortID="803648712">
+					<ChildrenList>
+						<Sound Name="skeletondie-converted" ID="{8ED12CC2-2AD4-4A5C-A1C1-16F9F7BF39C9}" ShortID="1016393250">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="skeletondie-converted" ID="{082B4001-FE4B-4A8A-9D63-0A6074A7F557}">
+									<Language>SFX</Language>
+									<AudioFile>skeletondie-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="778999676"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="skeletondie-converted" ID="{082B4001-FE4B-4A8A-9D63-0A6074A7F557}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hitsound-converted" ID="{86C8FA61-FC7F-49A4-A6C9-33E248E14841}" ShortID="813487285">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{49205021-0759-47CA-B1CB-140363DF7069}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{22EAEDE3-FC34-4DA2-AE47-80012C296726}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hitsound-converted" ID="{DF257CB0-7A48-4D9B-9A91-372BE78B1182}">
+									<Language>SFX</Language>
+									<AudioFile>hitsound-converted.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="984303896"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hitsound-converted" ID="{DF257CB0-7A48-4D9B-9A91-372BE78B1182}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

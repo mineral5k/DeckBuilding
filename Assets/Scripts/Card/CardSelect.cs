@@ -10,6 +10,7 @@ public class CardSelect : MonoBehaviour
 
     public void SelectCard(int count)
     {
+        AkUnitySoundEngine.SetState("Gameplay_State", "Card_Select");
         chance = count;
         Debug.Log("¼¿·ºÆ® Ä«µå");
         foreach (CardSelectCard card in cardSelectCards)
@@ -45,6 +46,7 @@ public class CardSelect : MonoBehaviour
         }
         else if ( chance == 0)
         {
+            AkUnitySoundEngine.SetState("Gameplay_State", "Battle");
             BattleManager bm = FindObjectOfType<BattleManager>();
             bm.SetEnemies();
             bm.Init();

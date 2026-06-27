@@ -31,6 +31,28 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="Gameplay_State" ID="{F1752D92-C353-417F-AA69-FE914C395C16}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Battle" ID="{31BF7BDD-CEEE-4634-9841-9FB7C5EA8018}"/>
+								<CustomState Name="" ID="{134F00D4-1A43-48F8-AA73-DAD5A1C879F0}" ShortID="284074355"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Card_Select" ID="{F6B132E2-E152-4EC5-85D7-B0C1FB1CC912}"/>
+								<CustomState Name="" ID="{50EA4AEA-BFE9-42D5-B16F-4FA3E90D447C}" ShortID="716353992">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="50"/>
+										<Property Name="Volume" Type="Real64" Value="-3"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="bgmwav" ID="{3C99E54D-A64C-43DF-93AE-7017B73D0F84}" Platform="Linked"/>
 					</ActiveSourceList>

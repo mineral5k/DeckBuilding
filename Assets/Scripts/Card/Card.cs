@@ -157,6 +157,7 @@ public class Card : MonoBehaviour
         transform.DOScale(1.3f, 0.1f);
         GetComponent<SortingGroup>().sortingOrder = 100;
         pannels.ShowPannels(KeywardDescs);
+        SoundManager.Instance.PlayCardFlipSound();
     }
 
     private void OnMouseDown()
