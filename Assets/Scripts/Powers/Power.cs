@@ -15,6 +15,8 @@ public abstract class Power
 
     public abstract void OnApply(Damagable damagable);
     public abstract void OnAdded(Damagable damagable);
+
+    public abstract void ReMoveThis();
     
     
 }

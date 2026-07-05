@@ -76,7 +76,7 @@ public class BattleManager : MonoBehaviour
         
     }
 
-    public void UpdateAllEneiesIntention()
+    public void UpdateAllEnemiesIntention()
     {
         if (enemies.Count == 0) return;
         foreach (var enemy in enemies)
@@ -123,6 +123,8 @@ public class BattleManager : MonoBehaviour
             enemy.ResetShield();
             await Task.Delay(1000);
             enemy.NextPattern();
+            await Task.Delay(600);
+
         }
         EnemyTurnEnd();
         TurnStart();

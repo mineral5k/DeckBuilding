@@ -33,4 +33,9 @@ public class DeffenseNextTurn : Power
         powerOwner.HPBarUIUpdate();
         BattleEvents.OnTurnStart -= Excute;
     }
+
+    public override void ReMoveThis()
+    {
+        throw new System.NotImplementedException();
+    }
 }

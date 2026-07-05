@@ -190,6 +190,7 @@ public class Damagable : MonoBehaviour
 
     public void Attack(Damagable enemy,int damage)
     {
+        if (enemy == null) return;
         int finalDamage = CalcDamage(enemy, damage);
         animator.SetTrigger("AttackTrigger");
         enemy.TakeDamage(finalDamage);
@@ -197,7 +198,10 @@ public class Damagable : MonoBehaviour
 
     public virtual void Die()
     {
-        
+        foreach(Power power in powers )
+        {
+            
+        }
     }
 
     public virtual void SetFirstIntention()

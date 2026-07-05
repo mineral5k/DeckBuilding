@@ -44,7 +44,7 @@ public class Weakness : Power
         }
     }
 
-    public void ReMoveThis()
+    public override void ReMoveThis()
     {
         powerOwner.weakness = false;
         powerOwner.powers.Remove(this);

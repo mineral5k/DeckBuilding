@@ -31,4 +31,8 @@ public class Strength : Power
     {
         OnApply(damagable);
     }
+
+    public override void ReMoveThis()
+    {
+    }
 }

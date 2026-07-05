@@ -45,7 +45,7 @@ public class Vulnerable : Power
         }
     }
 
-    public void ReMoveThis()
+    public override void ReMoveThis()
     {
         powerOwner.vulnuerable = false;
         powerOwner.powers.Remove(this);

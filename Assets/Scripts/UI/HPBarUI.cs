@@ -87,7 +87,7 @@ public class HPBarUI : MonoBehaviour
         }
 
         if (status.battleManager == null) return;
-        status.battleManager.UpdateAllEneiesIntention();
+        status.battleManager.UpdateAllEnemiesIntention();
     }
 
     public void UpdateIntentionIcons()

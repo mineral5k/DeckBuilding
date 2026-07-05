@@ -44,7 +44,7 @@ public class Burn : Power
         }
     }
 
-    public void ReMoveThis()
+    public override void ReMoveThis()
     {
         powerOwner.powers.Remove(this);
         BattleEvents.OnEnemyTurnStart -= OnEnemyTurnStart;
