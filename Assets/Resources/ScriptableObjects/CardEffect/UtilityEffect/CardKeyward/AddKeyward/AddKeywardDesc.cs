@@ -20,11 +20,8 @@ public class AddKeywardDesc : CardKeywardEffect
         }
         else
         {
-            Debug.LogWarning($"{keywardTitle}은 존재하지 않는 키워드입니다!");
         }
 
-        // cardOfEffect.keywards.Add(CardKeyward.Exhaust);
-        // cardOfEffect.KeywardDescs.Add(KeywardText.Exhaust);
     }
 
     public override void SetCard(Card card)

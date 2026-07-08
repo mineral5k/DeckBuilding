@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private GameObject skeletonPrefab;
     [SerializeField] private EnergyText EnergyText;
     public PlayerStatus Player => GameManager.Instance.Player.Status;
+    bool isPlayerTurn = false;
     
     
 
@@ -99,6 +100,7 @@ public class BattleManager : MonoBehaviour
 
     public void TurnStart()
     {
+        isPlayerTurn = true;
         turnCount++;
         Player.ResetShield();
         BattleEvents.OnTurnStart?.Invoke();
@@ -138,10 +140,10 @@ public class BattleManager : MonoBehaviour
 
     public void ProceedTurn()         // 턴 종료 버튼을 눌렀을 시 실행 
     {
+        if (isPlayerTurn == false) return;
+        isPlayerTurn = false;
         PlayerTurnEnd();
         EnemyTurnStart();
-        //EnemyTurnEnd(); 
-        //TurnStart();
     }
 
     public async void MonsterDie(Monster monster)

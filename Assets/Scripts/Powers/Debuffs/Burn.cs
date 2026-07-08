@@ -35,6 +35,7 @@ public class Burn : Power
 
     public void OnEnemyTurnStart()
     {
+        if (powerOwner == null) return;
         powerOwner.TakeHPDamage(amount);
         amount--;
         powerOwner.HPBarUIUpdate();

@@ -126,6 +126,7 @@ public class Damagable : MonoBehaviour
         if (damage <= shield)
         {
             shield -= damage;
+            OnHPChanged?.Invoke();
             PopUpDamage("Blocked");
         }
 
@@ -151,6 +152,7 @@ public class Damagable : MonoBehaviour
     public void TakeHPDamage(int damage)
     {
         currentHP -= damage;
+        OnHPChanged?.Invoke();
         PopUpDamage(damage.ToString());
         if (currentHP <= 0)
         {

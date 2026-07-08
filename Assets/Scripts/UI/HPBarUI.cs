@@ -2,7 +2,6 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -83,7 +82,7 @@ public class HPBarUI : MonoBehaviour
         {
             if (i>=12) break;
             powerIcons[i].gameObject.SetActive(true);
-            powerIcons[i].AllocatePower(status.powers[i]);       // TODO : 추후 파워가 13개 이상일때 아이콘 추가하는 코드 필요 
+            powerIcons[i].AllocatePower(status.powers[i]);       
         }
 
         if (status.battleManager == null) return;
