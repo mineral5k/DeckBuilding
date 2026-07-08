@@ -1,0 +1,30 @@
+Event	ID	Name			Wwise Object Path	Notes
+	361241790	sword2			\SFX\Player\sword2	
+	1432588725	Select			\SFX\Card\Select	
+	1937476718	CardSwap			\SFX\Card\CardSwap	
+	2044723518	CardFlip			\SFX\Card\CardFlip	
+	2454616260	sword			\SFX\Player\sword	
+	2460311919	skeletonHit			\SFX\Enemy\skeletonHit	
+	2542411811	PlayBGM			\BGM\PlayBGM	
+	2596504226	skeletonDie			\SFX\Enemy\skeletonDie	
+	3193947170	hurt			\SFX\Player\hurt	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	762757699	Gameplay_State			\Default Work Unit\Gameplay_State	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Gameplay_State			
+	1259932846	Card_Select	Gameplay_State			
+	2937832959	Battle	Gameplay_State			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	82394505	sword2-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\CB\{CBF40449-8D01-350F-B638-AC4806FAF603}.wem		\Actor-Mixer Hierarchy\SFX\Player\sword2-converted		96864
+	195841447	bgmwav	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\EF\{EF0C27FE-5557-94E3-7B38-B81BF530C83D}.wem		\Actor-Mixer Hierarchy\BGM\bgmwav		31887504
+	310662912	selectSfx	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\40\{408DA2E2-2700-F646-7F27-7A63AD6CC12F}.wem		\Actor-Mixer Hierarchy\SFX\Card\selectSfx		33112
+	452649857	hurt-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\CF\{CF3F4AE5-515D-B956-E66C-FBF7ECF5ABE3}.wem		\Actor-Mixer Hierarchy\SFX\Player\hurt-converted		64608
+	778999676	skeletondie-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\91\{919775A6-9465-37D6-3F3D-5799DC607974}.wem		\Actor-Mixer Hierarchy\SFX\Enemy\skeletondie-converted		323560
+	859024711	cardSwap-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\56\{563904B2-6520-7CAD-7AA9-C3BFC529485F}.wem		\Actor-Mixer Hierarchy\SFX\Card\cardSwap-converted		53276
+	984303896	hitsound-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\50\{50C8068C-74C7-89B3-CC8E-C51E99360C6E}.wem		\Actor-Mixer Hierarchy\SFX\Enemy\hitsound-converted		60444
+	1048146160	cardFlip-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\1C\{1CB92286-615F-5450-2322-8C6316EE47C6}.wem		\Actor-Mixer Hierarchy\SFX\Card\cardFlip-converted		138336
+	1058543793	sword-converted	C:\Users\User\Documents\GitHub\DeckBuilding\DeckBuilding_WwiseProject\.cache\AC\{AC2107F7-CB76-9E40-0006-1C9CE903F016}.wem		\Actor-Mixer Hierarchy\SFX\Player\sword-converted		41516
+

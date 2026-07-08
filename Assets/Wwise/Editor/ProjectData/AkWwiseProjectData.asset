@@ -1,0 +1,480 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9337d68246e08409623355ebd3b812, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 35f4260427cb3246a1eeb77164e87bbf
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: 35f4260427cb3246a1eeb77164e87bbf
+    GuidInternal: 
+    m_lastTime: -8584193238929896473
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: e3edea2234fca24dae4780012c296726
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: e3edea2234fca24dae4780012c296726
+    GuidInternal: 
+    m_lastTime: -8584193238931093052
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e3edea2234fca24dae4780012c296726
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+    ParentPath: SoundBanks\Default Work Unit
+    guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+    GuidInternal: 
+    m_lastTime: -8584192978658484815
+    List:
+    - name: Global
+      guid: b7607be9e863bc4d99a5c03a99a93b59
+      id: 1465331116
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8b966c25e0f1b94fb260d2f2f7c264f8
+      - ElementName: Global
+        ObjectType: 7
+        guid: b7607be9e863bc4d99a5c03a99a93b59
+      Path: SoundBanks\Default Work Unit\Global
+  EventWwu:
+  - PhysicalPath: Events\BGM.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: BGM
+      ObjectType: 12
+      guid: 920ea18505171f429990c6e8b56b4e4d
+    ParentPath: Events\BGM
+    guid: 920ea18505171f429990c6e8b56b4e4d
+    GuidInternal: 
+    m_lastTime: -8584193211038260650
+    List:
+    - name: PlayBGM
+      guid: 35c51fb949266f47938a75d72bb6edca
+      id: 2542411811
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: BGM
+        ObjectType: 12
+        guid: 920ea18505171f429990c6e8b56b4e4d
+      - ElementName: PlayBGM
+        ObjectType: 3
+        guid: 35c51fb949266f47938a75d72bb6edca
+      Path: Events\BGM\PlayBGM
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 5b0e2a9581781141a1303d14d47aef5c
+    ParentPath: Events\Default Work Unit
+    guid: 5b0e2a9581781141a1303d14d47aef5c
+    GuidInternal: 
+    m_lastTime: -8584193238930885173
+    List: []
+  - PhysicalPath: Events\SFX.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: SFX
+      ObjectType: 12
+      guid: b65e32a0a53564488a3d9b93b055956b
+    ParentPath: Events\SFX
+    guid: b65e32a0a53564488a3d9b93b055956b
+    GuidInternal: 
+    m_lastTime: -8584190602384655541
+    List:
+    - name: Card
+      guid: 1d831ac4b372184d8ce9347e9da7f5b5
+      id: 4189504227
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Card
+        ObjectType: 4
+        guid: 1d831ac4b372184d8ce9347e9da7f5b5
+      Path: Events\SFX\Card
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: CardFlip
+      guid: 2a9b57fabecf0445b417296ebca78b95
+      id: 2044723518
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Card
+        ObjectType: 4
+        guid: 1d831ac4b372184d8ce9347e9da7f5b5
+      - ElementName: CardFlip
+        ObjectType: 3
+        guid: 2a9b57fabecf0445b417296ebca78b95
+      Path: Events\SFX\Card\CardFlip
+      maxAttenuation: 0
+      maxDuration: 0.78367347
+      minDuration: 0.78367347
+    - name: CardSwap
+      guid: 893412130a2f9e448d58ccc1b4d00179
+      id: 1937476718
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Card
+        ObjectType: 4
+        guid: 1d831ac4b372184d8ce9347e9da7f5b5
+      - ElementName: CardSwap
+        ObjectType: 3
+        guid: 893412130a2f9e448d58ccc1b4d00179
+      Path: Events\SFX\Card\CardSwap
+      maxAttenuation: 0
+      maxDuration: 0.4024194
+      minDuration: 0.22585025
+    - name: Enemy
+      guid: 7389b6735f1baa4b90de5200a9b4482e
+      id: 2299321487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: 7389b6735f1baa4b90de5200a9b4482e
+      Path: Events\SFX\Enemy
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: hurt
+      guid: effddb1297f55f489a42393b886dd878
+      id: 3193947170
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Player
+        ObjectType: 4
+        guid: 30eb9a6af4cfdd4a913911aabd20277b
+      - ElementName: hurt
+        ObjectType: 3
+        guid: effddb1297f55f489a42393b886dd878
+      Path: Events\SFX\Player\hurt
+      maxAttenuation: 0
+      maxDuration: 0.36571428
+      minDuration: 0.36571428
+    - name: Player
+      guid: 30eb9a6af4cfdd4a913911aabd20277b
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Player
+        ObjectType: 4
+        guid: 30eb9a6af4cfdd4a913911aabd20277b
+      Path: Events\SFX\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Select
+      guid: 0df15d3dfd920349b428110879e16509
+      id: 1432588725
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Card
+        ObjectType: 4
+        guid: 1d831ac4b372184d8ce9347e9da7f5b5
+      - ElementName: Select
+        ObjectType: 3
+        guid: 0df15d3dfd920349b428110879e16509
+      Path: Events\SFX\Card\Select
+      maxAttenuation: 0
+      maxDuration: 0.18716553
+      minDuration: 0.18716553
+    - name: skeletonDie
+      guid: a0262dc86965c346be741a57e16c699f
+      id: 2596504226
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: 7389b6735f1baa4b90de5200a9b4482e
+      - ElementName: skeletonDie
+        ObjectType: 3
+        guid: a0262dc86965c346be741a57e16c699f
+      Path: Events\SFX\Enemy\skeletonDie
+      maxAttenuation: 0
+      maxDuration: 1.8336961
+      minDuration: 1.8336961
+    - name: skeletonHit
+      guid: 7e1eb67e8df3464bb7a489ac3c1a5434
+      id: 2460311919
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Enemy
+        ObjectType: 4
+        guid: 7389b6735f1baa4b90de5200a9b4482e
+      - ElementName: skeletonHit
+        ObjectType: 3
+        guid: 7e1eb67e8df3464bb7a489ac3c1a5434
+      Path: Events\SFX\Enemy\skeletonHit
+      maxAttenuation: 0
+      maxDuration: 0.34210885
+      minDuration: 0.34210885
+    - name: sword
+      guid: 6296f6c8e2d5c848953239080cce85e3
+      id: 2454616260
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Player
+        ObjectType: 4
+        guid: 30eb9a6af4cfdd4a913911aabd20277b
+      - ElementName: sword
+        ObjectType: 3
+        guid: 6296f6c8e2d5c848953239080cce85e3
+      Path: Events\SFX\Player\sword
+      maxAttenuation: 0
+      maxDuration: 0.23480725
+      minDuration: 0.23480725
+    - name: sword2
+      guid: 80d0f521b343fd448764572bf249b8e4
+      id: 361241790
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: SFX
+        ObjectType: 12
+        guid: b65e32a0a53564488a3d9b93b055956b
+      - ElementName: Player
+        ObjectType: 4
+        guid: 30eb9a6af4cfdd4a913911aabd20277b
+      - ElementName: sword2
+        ObjectType: 3
+        guid: 80d0f521b343fd448764572bf249b8e4
+      Path: Events\SFX\Player\sword2
+      maxAttenuation: 0
+      maxDuration: 0.5485714
+      minDuration: 0.5485714
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 20769865e2ef0a40b90f9f1640cfeee1
+    ParentPath: Game Parameters\Default Work Unit
+    guid: 20769865e2ef0a40b90f9f1640cfeee1
+    GuidInternal: 
+    m_lastTime: -8584193238930199100
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 50c701f83fd46e4e9308038cc63a6841
+    ParentPath: States\Default Work Unit
+    guid: 50c701f83fd46e4e9308038cc63a6841
+    GuidInternal: 
+    m_lastTime: -8584190538028730714
+    List:
+    - name: Gameplay_State
+      guid: 922d75f153c37f41aa69fe914c395c16
+      id: 762757699
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 50c701f83fd46e4e9308038cc63a6841
+      - ElementName: Gameplay_State
+        ObjectType: 9
+        guid: 922d75f153c37f41aa69fe914c395c16
+      Path: States\Default Work Unit\Gameplay_State
+      values:
+      - name: Battle
+        guid: dd7bbf31eece344698419fb7c5ea8018
+        id: 2937832959
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 50c701f83fd46e4e9308038cc63a6841
+        - ElementName: Gameplay_State
+          ObjectType: 9
+          guid: 922d75f153c37f41aa69fe914c395c16
+        - ElementName: Battle
+          ObjectType: 8
+          guid: dd7bbf31eece344698419fb7c5ea8018
+      - name: Card_Select
+        guid: e232b1f652e1c54e85d7b0c1fb1cc912
+        id: 1259932846
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 50c701f83fd46e4e9308038cc63a6841
+        - ElementName: Gameplay_State
+          ObjectType: 9
+          guid: 922d75f153c37f41aa69fe914c395c16
+        - ElementName: Card_Select
+          ObjectType: 8
+          guid: e232b1f652e1c54e85d7b0c1fb1cc912
+      - name: None
+        guid: 6e1443a10f6dc047b9b883949b22a894
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 50c701f83fd46e4e9308038cc63a6841
+        - ElementName: Gameplay_State
+          ObjectType: 9
+          guid: 922d75f153c37f41aa69fe914c395c16
+        - ElementName: None
+          ObjectType: 8
+          guid: 6e1443a10f6dc047b9b883949b22a894
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 8500dbdb58fb12459ec621008e08a96c
+    ParentPath: Switches\Default Work Unit
+    guid: 8500dbdb58fb12459ec621008e08a96c
+    GuidInternal: 
+    m_lastTime: -8584193238930482021
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: effdfc2e4e2f8244b8f49c0504a74d5d
+    ParentPath: Triggers\Default Work Unit
+    guid: effdfc2e4e2f8244b8f49c0504a74d5d
+    GuidInternal: 
+    m_lastTime: -8584193238929472306
+    List: []
+  ExpandedFileSystemItemIds: 020000000300000006000000070000000a0000000b000000150000001600000017000000
+  ExpandedWaapiItemIds: 020000000300000006000000
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 1
+  CurrentPluginConfig: 

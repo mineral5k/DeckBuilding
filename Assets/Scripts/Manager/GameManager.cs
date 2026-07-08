@@ -1,0 +1,53 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public event Action OnAllCardUIUpdate;
+
+    public static GameManager Instance;
+    private Player player;
+    public int battleId = 1;
+
+    public Player Player
+    {
+        get { return player; }
+        set { player = value; }
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        OnAllCardUIUpdate = null;
+    }
+
+    public void UpdateUI()
+    {
+        OnAllCardUIUpdate?.Invoke();
+    }
+
+    public void EnterBattleStage()
+    {
+
+    }
+
+    public void SelectCard()
+    {
+        CardSelect cardSelect = Instantiate(Resources.Load<GameObject>("Prefabs/Card/CardSelect")).GetComponent<CardSelect>();
+        cardSelect.SelectCard(3);
+    }
+}

@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Search;
+using UnityEngine;
+
+public class AnimManager : MonoBehaviour
+{
+    public static AnimManager Instance;
+    private Queue<IEnumerator> coroutineQueue = new Queue<IEnumerator>();
+    private bool isRunning = false;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void Enqueue(IEnumerator coroutine)
+    {
+        coroutineQueue.Enqueue(coroutine);
+
+        if (!isRunning)
+        {
+            StartCoroutine(ProcessQueue());
+        }
+    }
+
+    private IEnumerator ProcessQueue()
+    {
+        isRunning = true;
+
+        while (coroutineQueue.Count > 0)
+        {
+            IEnumerator current = coroutineQueue.Dequeue();
+            yield return StartCoroutine(current); 
+        }
+
+        isRunning = false;
+    }
+
+    public void BattleEnd()
+    {
+        coroutineQueue.Clear();
+        isRunning = false;
+    }
+
+}

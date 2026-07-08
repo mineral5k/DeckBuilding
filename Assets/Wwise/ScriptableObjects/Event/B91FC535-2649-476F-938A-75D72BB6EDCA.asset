@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916a06fcf0731b849b6702f16b0900a4, type: 3}
+  m_Name: B91FC535-2649-476F-938A-75D72BB6EDCA
+  m_EditorClassIdentifier: 
+  objectName: PlayBGM
+  id: 2542411811
+  guid: B91FC535-2649-476F-938A-75D72BB6EDCA
+  IsInUserDefinedSoundBank: 1
